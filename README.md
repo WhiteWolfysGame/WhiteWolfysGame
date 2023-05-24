@@ -7,13 +7,13 @@ Nach der Ausbildung war ich eine Zeit lang in der Webentwicklung unterwegs, habe
 Mit diesen Sprachen und Technologien habe ich mich bisher beschäftigt und schätze meine Kenntnisse wie folgt ab:
 | Sprache    | Kenntnis  |
 | :---       | :---:     |
+| ASP.NET    | gut       |
+| C# .NET    | erweitert |
 | (X)HTML    | gut       |
 | CSS        | gut       |
-| JavaScript | basic     |
-| C# .NET    | erweitert |
-| SQL        | erweitert |
 | PHP        | basic     |
-| ASP.NET    | gut       |
+| JavaScript | basic     |
+| SQL        | erweitert |
 
 <!--
 **WhiteWolfysGame/WhiteWolfysGame** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
