@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: rgb(100, 0, 143);
+	color: white;
+}
+
+a{
+	color: white;
+}
+a:visited{
+	color: rgb(215, 215, 215);
+}
+a:hover{
+	color: rgb(255, 139, 139);
+}
+
+dl{
+	margin: 25px 5px;
+}
+dt{
+	margin-left: 10px;
+}
+dd{
+	margin-left: 30px;
+}
+dt + dd{
+	margin-left: 20px;
+}
+dd + dd{
+	font-style: italic;
+}
+dd + dt{
+	margin-top: 50px;
+}
+
+table{
+	border-style: solid;
+	border-radius: 5px;
+}
+td{
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+details{
+	margin: 10px;
+	padding: 5px;
+}
+details[open]{
+	border: solid 1px #ffffff;
+	border-radius: 10px;
+}
+details summary{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 36px;
+	color: #ffffff;
+}
+
+div.description p.titel{
+	text-decoration: underline;
+}
+
+hr{
+	border: none;
+}
+hr + div{
+	margin-top: 50px;
+}
+
+#back_to_top{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+}
+#back_to_top:hover{
+	color: rgb(255, 71, 71);
+}
+
+.myProgress{
+	margin-bottom: 10px;
+}
+.myProgressStart{
+	float:left;
+}
+.myProgressEnd{
+	float: right;
+	text-align: right;
+}
