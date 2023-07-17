@@ -17,6 +17,10 @@ a:hover{
 	color: rgb(255, 139, 139);
 }
 
+li .dropdown-item{
+	color: black;
+}
+
 dl{
 	margin: 25px 5px;
 }

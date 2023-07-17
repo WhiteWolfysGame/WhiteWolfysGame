@@ -14,3 +14,7 @@ function scrollFunction() {
       backToTop.style.display = "none";
    }
 }
+
+function YoutubePlaylistFrame(playlistId, width = 560, height = 315){
+   return '<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/videoseries?list=' + playlistId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+}
