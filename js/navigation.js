@@ -7,7 +7,7 @@ class Navigation{
       this.AddPage("Projektliste", "projektliste.html", "", "", true);
       //this.AddPage("Kenntnisse", "kenntnisse.html", "", "", true);
 
-      this.AddPage("Hobbies", "#", "Wolf", "wolf.html", false);
+      this.AddPage("Hobbies", "#", "Wolf", "wolf.html", true);
       this.AddPage("Hobbies", "#", "---");
       this.AddPage("Hobbies", "#", "YouTube", "youtube.html", true);
       this.AddPage("Hobbies", "#", "Twitch", "twitch.html", false);

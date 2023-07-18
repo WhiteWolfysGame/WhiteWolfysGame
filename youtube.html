@@ -4,13 +4,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>WWG - YouTube</title>
+      <link rel="icon" type="image/x-icon" href="graphics/Logo_WolfysGame_ohne_Hintergrund__ohne_Text__mit_Glow__512x512.ico">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 		<link rel="stylesheet" type="text/css" href="styles/main.css" />
 		<script src="js/main.min.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1>
+			<h1 id="top">
 				<span id="wwg"></span>
 				<script>
 					document.getElementById("wwg").innerHTML = wwg;
@@ -113,7 +114,33 @@
 		</p>
 
       <h2>Fundgrube</h2>
-      <p>fundgrube...</p>
+      <p>
+			Diesen Kanal habe ich mit der Idee erstellt, auch Videos zu produzieren, die etwas anderen Content als Let's Plays liefern.
+			Tatsächlich war die Idee hier Live-React-Videos von Twitch, sowie Reviews und Unboxings zu publizieren.
+			Bisher haben sich jedoch nur Reviews hier eingefunden.
+			Diese unterteile ich dabei in Retro-Reviews und Reviews zu aktuelleren Gaming-Titeln.
+			Im Endeffekt dreht es sich auch hier wieder um Spiele, jedoch detailierter erläutert, in dessen ich meine Meinung kund tue.
+			Videos auf diesem Kanal werden leider nicht so oft produziert, wie ich das gern wünsche.
+			Hauptmerkmal ist in erster Linie die mangelnde Zeit aufgrund von Arbeit, aber auch dass ich nicht über so viele Games sprechen kann.
+			Ein weiterer Grund ist auch, dass ich sehr viel krank bin.
+			Migräne, Depressionen und mein eher schlechtes Immunsystem tun auch ihr übriges.
+			Dennoch halte ich diesen Kanal am Leben.
+			Vielleicht kommt nochmal die Zeit, in der ich aktiver sein kann.
+			Zum Kanal und den Videos: <a href="https://www.youtube.com/@WhiteWolfysGameFundgrube" target="_blank">White Wolfys Game Fundgrube</a>
+		</p>
+		<p>
+			Mein Letztes Video auf diesem Kanal:<br />
+			<span id="latestVideo"></span>
+			<script>
+				document.getElementById("latestVideo").innerHTML = YoutubeFrame("GmDTF78dS9s");
+			</script>
+		</p>
+
+		<a href="#top" id="back_to_top">
+         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+          </svg>
+      </a>
 		
 		<footer>
 			<span id="copy"></span>
