@@ -10,147 +10,149 @@
 		<script src="js/main.min.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1 id="top">
-				<span id="wwg"></span>
-				<script>
-					document.getElementById("wwg").innerHTML = wwg;
-				</script>
-				- Wolf
-			</h1>
-			<nav id="mainNavigation">
-            <script>
-               var nav = new Navigation();
-					document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Hobbies", "Wolf");
-            </script>
-			</nav>
-		</header>
-		
-		<h2>Der Wolf - Mein ein und alles</h2>
-		<p>
-         Der Wolf begleitet mich schon mein ganzes Leben lang.
-         Dieses Tier hat sich über die Jahre regelrecht zu einem Seelentier entwickelt, welches mich bis heute begleitet.
-      </p>
+      <div class="container">
+         <header>
+            <h1 id="top">
+               <span id="wwg"></span>
+               <script>
+                  document.getElementById("wwg").innerHTML = wwg;
+               </script>
+               - Wolf
+            </h1>
+            <nav id="mainNavigation">
+               <script>
+                  var nav = new Navigation();
+                  document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Hobbies", "Wolf");
+               </script>
+            </nav>
+         </header>
+         
+         <h2>Der Wolf - Mein ein und alles</h2>
+         <p>
+            Der Wolf begleitet mich schon mein ganzes Leben lang.
+            Dieses Tier hat sich über die Jahre regelrecht zu einem Seelentier entwickelt, welches mich bis heute begleitet.
+         </p>
 
-      <div class="row row-cols-1 row-cols-md-3">
-         <div class="col"></div>
-         <div class="col">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020510.jpg" class="d-block w-100 rounded" alt="...">
+         <div class="row row-cols-1 row-cols-md-3">
+            <div class="col"></div>
+            <div class="col">
+               <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020510.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
+                     <div class="carousel-item">
+                        <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020426.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
+                     <div class="carousel-item">
+                        <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020342.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
+                     <div class="carousel-item">
+                        <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020251.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
+                     <div class="carousel-item">
+                        <img src="https://images.wallpaperscraft.com/image/single/wolf_predator_howl_116891_1920x1080.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
+                     <div class="carousel-item">
+                        <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020265.jpg" class="d-block w-100 rounded" alt="...">
+                     </div>
                   </div>
-                  <div class="carousel-item">
-                     <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020426.jpg" class="d-block w-100 rounded" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020342.jpg" class="d-block w-100 rounded" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020251.jpg" class="d-block w-100 rounded" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="https://images.wallpaperscraft.com/image/single/wolf_predator_howl_116891_1920x1080.jpg" class="d-block w-100 rounded" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700020265.jpg" class="d-block w-100 rounded" alt="...">
-                  </div>
+                  <!--
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                  </button>
+                  -->
                </div>
-               <!--
-               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-               </button>
-               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-               </button>
-               -->
+            </div>
+            <div class="col"></div>
+         </div>
+
+         <p>
+            Noch bevor ich zur Schule ging haben mich Wölfe stets fasziniert.
+            Auch wenn ich damals Angst vor Hunden allgemein hatte, bei Wölfen war ich immer recht offen.
+            Angefangen, mich richtig mit ihnen zu beschäftigen, hat es seit dem Anime
+            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<em>jap.</em> ジャングルブック・少年モーグリ">
+               Das Dschungelbuch - Die Serie
+            </button>
+            von
+            <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>Fumio Kurokawa</b> ist ein japanischer Storyboard-Künstler und Animationsfilmregisseur. In den 1970er und 1980er Jahren führte er Regie bei einer Reihe von Zeichentrickserien, die von Nippon Animation produziert wurden.">
+               Fumio Kurokawa
+            </button>
+            mit dem Produktionsunternehmen
+            <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>Nippon Animation K.K.</b> ist ein japanisches Zeichentrickfilmstudio mit Sitz in Tama, dessen Animeserien auch außerhalb Japans bekannt wurden.">
+               Nippon Animation
+            </button>
+            von 1989.
+         </p>
+         <p>
+            Jahre später fing ich an mir Bücher zu kaufen und mich nach und nach fachlich mit ihnen zu beschäftigen.
+            Alles von Verhalten, Körpersprache bis hin zu Körperbau und Biologie habe ich konsumiert.
+            Mit dem Internet wurde meine Welt nochmals größer: Videos, Bilder und Zugriff auf Studien.
+            Bis heute habe ich das Interesse nicht verloren, eher im Gegenteil selbst wenn es nicht immer den Anschein hat.
+            Ich eifere stets weiter meinem Lieblingstier hinterher.
+            Irgendwann fing ich an gewisse Verhaltensmuster eines Wolfes für meine Persönlichkeit anzunehmen, Größtenteils unbewusst.
+            Darunter zähle ich unter Anderem auf gewisse Geräusche reflexartig zu reagieren, auch das familiäre Befinden nur auf meinem näheren Umfeld zu beschränken und sonst eher ruhig und zurückhaltend zu sein.
+         </p>
+         <p>
+            Während meines Berufsvorbereitungsjahres (08/2007 - 08/2008) habe ich zudem eine Facharbeit zum Thema Wolf geschrieben.
+            Leider ist diese Abhandlung mit der Zeit und den Umzügen verloren gegangen.
+            Ich hätte sie hier gern mit euch geteilt.
+            Diese Facharbeit wurde damals als eines der besten Arbeiten des Jahrganges ausgezeichnet.
+         </p>
+         <p>
+            Die folgende Auflistung zeigt alle Bücher, mit denen ich mich beschäftigt habe.
+         </p>
+         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
+            <div class="col">
+               <p>Der Wolf: Fasziniernde Einblicke und spektakuläre Fotografien</p>
+               <p><a href="https://www.google.com/search?q=isbn+9781405479257" target="_blank">EAN / ISBN: 9781405479257</a></p>
+               <img src="https://pictures.abebooks.com/isbn/9781405479257-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Fasziniernde Einblicke und spektakuläre Fotografien">
+            </div>
+            <div class="col">
+               <p>Der Wolf: Zwischen Mythos und Wahrheit</p>
+               <p><a href="https://www.google.com/search?q=isbn+3895552755" target="_blank">EAN / ISBN: 3895552755</a></p>
+               <img src="https://pictures.abebooks.com/isbn/9783895552755-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Zwischen Mythos und Wahrheit">
+            </div>
+            <div class="col">
+               <p>Der Wolf. Ökologie, Verhalten, Schutz</p>
+               <p><a href="https://www.google.com/search?q=isbn+3826384318" target="_blank">EAN / ISBN: 3826384318</a></p>
+               <img src="https://pictures.abebooks.com/isbn/9783826384318-us.jpg" class="img-fluid rounded" alt="Buch: Der Wolf. Ökologie, Verhalten, Schutz">
+            </div>
+            <div class="col">
+               <p>Faszination Wolf: Mythos, Gefährdung, Rückkehr. Mit den Stimmen der Wölfe auf CD</p>
+               <p><a href="https://www.google.com/search?q=isbn+3440091872" target="_blank">EAN / ISBN: 3440091872</a></p>
+               <img src="https://images.booklooker.de/s/9783440091876/Barbara-Promberger+Faszination-Wolf-Mythos-Gef%C3%A4hrdung-R%C3%BCckkehr-Mit-den-Stimmen-der-W%C3%B6lfe-auf-CD.jpg" class="img-fluid rounded" alt="Buch: Faszination Wolf: Mythos, Gefährdung, Rückkehr. Mit den Stimmen der Wölfe auf CD">
+            </div>
+            <div class="col">
+               <p>Der Wolf: Mythos und Wahrheit (mit DVD)</p>
+               <p><a href="https://www.google.com/search?q=isbn+1472307127" target="_blank">EAN / ISBN: 1472307127</a></p>
+               <img src="https://pictures.abebooks.com/isbn/9781472307125-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Mythos und Wahrheit">
+            </div>
+            <div class="col">
+               <p>WAS IST WAS Band 104: Wölfe - Im Revier der grauen Jäger</p>
+               <p><a href="https://www.google.com/search?q=isbn+3788620552" target="_blank">EAN / ISBN: 3788620552</a></p>
+               <img src="https://pictures.abebooks.com/isbn/9783788620554-de.jpg" class="img-fluid rounded" alt="Buch: WAS IST WAS Band 104 Wölfe. Im Revier der grauen Jäger">
             </div>
          </div>
-         <div class="col"></div>
-      </div>
 
-      <p>
-         Noch bevor ich zur Schule ging haben mich Wölfe stets fasziniert.
-         Auch wenn ich damals Angst vor Hunden allgemein hatte, bei Wölfen war ich immer recht offen.
-         Angefangen, mich richtig mit ihnen zu beschäftigen, hat es seit dem Anime
-         <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<em>jap.</em> ジャングルブック・少年モーグリ">
-            Das Dschungelbuch - Die Serie
-         </button>
-         von
-         <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>Fumio Kurokawa</b> ist ein japanischer Storyboard-Künstler und Animationsfilmregisseur. In den 1970er und 1980er Jahren führte er Regie bei einer Reihe von Zeichentrickserien, die von Nippon Animation produziert wurden.">
-            Fumio Kurokawa
-         </button>
-         mit dem Produktionsunternehmen
-         <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>Nippon Animation K.K.</b> ist ein japanisches Zeichentrickfilmstudio mit Sitz in Tama, dessen Animeserien auch außerhalb Japans bekannt wurden.">
-            Nippon Animation
-         </button>
-         von 1989.
-      </p>
-      <p>
-         Jahre später fing ich an mir Bücher zu kaufen und mich nach und nach fachlich mit ihnen zu beschäftigen.
-         Alles von Verhalten, Körpersprache bis hin zu Körperbau und Biologie habe ich konsumiert.
-         Mit dem Internet wurde meine Welt nochmals größer: Videos, Bilder und Zugriff auf Studien.
-         Bis heute habe ich das Interesse nicht verloren, eher im Gegenteil selbst wenn es nicht immer den Anschein hat.
-         Ich eifere stets weiter meinem Lieblingstier hinterher.
-         Irgendwann fing ich an gewisse Verhaltensmuster eines Wolfes für meine Persönlichkeit anzunehmen, Größtenteils unbewusst.
-         Darunter zähle ich unter Anderem auf gewisse Geräusche reflexartig zu reagieren, auch das familiäre Befinden nur auf meinem näheren Umfeld zu beschränken und sonst eher ruhig und zurückhaltend zu sein.
-      </p>
-      <p>
-         Während meines Berufsvorbereitungsjahres (08/2007 - 08/2008) habe ich zudem eine Facharbeit zum Thema Wolf geschrieben.
-         Leider ist diese Abhandlung mit der Zeit und den Umzügen verloren gegangen.
-         Ich hätte sie hier gern mit euch geteilt.
-         Diese Facharbeit wurde damals als eines der besten Arbeiten des Jahrganges ausgezeichnet.
-      </p>
-      <p>
-         Die folgende Auflistung zeigt alle Bücher, mit denen ich mich beschäftigt habe.
-      </p>
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
-         <div class="col">
-            <p>Der Wolf: Fasziniernde Einblicke und spektakuläre Fotografien</p>
-            <p><a href="https://www.google.com/search?q=isbn+9781405479257" target="_blank">EAN / ISBN: 9781405479257</a></p>
-            <img src="https://pictures.abebooks.com/isbn/9781405479257-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Fasziniernde Einblicke und spektakuläre Fotografien">
-         </div>
-         <div class="col">
-            <p>Der Wolf: Zwischen Mythos und Wahrheit</p>
-            <p><a href="https://www.google.com/search?q=isbn+3895552755" target="_blank">EAN / ISBN: 3895552755</a></p>
-            <img src="https://pictures.abebooks.com/isbn/9783895552755-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Zwischen Mythos und Wahrheit">
-         </div>
-         <div class="col">
-            <p>Der Wolf. Ökologie, Verhalten, Schutz</p>
-            <p><a href="https://www.google.com/search?q=isbn+3826384318" target="_blank">EAN / ISBN: 3826384318</a></p>
-            <img src="https://pictures.abebooks.com/isbn/9783826384318-us.jpg" class="img-fluid rounded" alt="Buch: Der Wolf. Ökologie, Verhalten, Schutz">
-         </div>
-         <div class="col">
-            <p>Faszination Wolf: Mythos, Gefährdung, Rückkehr. Mit den Stimmen der Wölfe auf CD</p>
-            <p><a href="https://www.google.com/search?q=isbn+3440091872" target="_blank">EAN / ISBN: 3440091872</a></p>
-            <img src="https://images.booklooker.de/s/9783440091876/Barbara-Promberger+Faszination-Wolf-Mythos-Gef%C3%A4hrdung-R%C3%BCckkehr-Mit-den-Stimmen-der-W%C3%B6lfe-auf-CD.jpg" class="img-fluid rounded" alt="Buch: Faszination Wolf: Mythos, Gefährdung, Rückkehr. Mit den Stimmen der Wölfe auf CD">
-         </div>
-         <div class="col">
-            <p>Der Wolf: Mythos und Wahrheit (mit DVD)</p>
-            <p><a href="https://www.google.com/search?q=isbn+1472307127" target="_blank">EAN / ISBN: 1472307127</a></p>
-            <img src="https://pictures.abebooks.com/isbn/9781472307125-de.jpg" class="img-fluid rounded" alt="Buch: Der Wolf: Mythos und Wahrheit">
-         </div>
-         <div class="col">
-            <p>WAS IST WAS Band 104: Wölfe - Im Revier der grauen Jäger</p>
-            <p><a href="https://www.google.com/search?q=isbn+3788620552" target="_blank">EAN / ISBN: 3788620552</a></p>
-            <img src="https://pictures.abebooks.com/isbn/9783788620554-de.jpg" class="img-fluid rounded" alt="Buch: WAS IST WAS Band 104 Wölfe. Im Revier der grauen Jäger">
-         </div>
+         <a href="#top" id="back_to_top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+               <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+            </svg>
+         </a>
+         
+         <footer>
+            <span id="copy"></span>
+            <script>
+               document.getElementById("copy").innerHTML = copy;
+            </script>
+         </footer>
       </div>
-
-		<a href="#top" id="back_to_top">
-         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
-          </svg>
-      </a>
-		
-		<footer>
-			<span id="copy"></span>
-			<script>
-				document.getElementById("copy").innerHTML = copy;
-			</script>
-		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
       <script>
          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

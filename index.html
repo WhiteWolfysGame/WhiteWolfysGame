@@ -10,35 +10,39 @@
 		<script src="js/main.min.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1>
-				<span id="wwg"></span>
+		<div class="container">
+			<header>
+				<h1>
+					<span id="wwg"></span>
+					<script>
+						document.getElementById("wwg").innerHTML = wwg;
+					</script>
+					- Startseite
+				</h1>
+				<nav id="mainNavigation">
+					<script>
+						var nav = new Navigation();
+						document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Startseite");
+					</script>
+				</nav>
+			</header>
+			
+			<main>
+				<h2>Hallo Welt!</h2>
+				<h2>Wölfe sind die besten Tiere in diesem Universum! Danach kommen Katzen UwU</h2>
+				
+				<p>Wenn ich mich kurz vorstellen darf, Mandy (a.k.a. LegecyWolf und White Wolfys Game). Auf meiner Homepage bekommt ihr einen kleinen Einblick zu meiner Person. Unter anderem Infos bezüglich beruflichen Werdegang, Hobbies und was es sonst noch (un)interessantes gibt</p>
+				<p>Ich bin gelernte Softwareentwicklerin mit guter Erfahrung in der Programmiersprache C# .NET, sowie in Datenbankentechnologien von Oracle und MySQL.</p>
+				<p>Neben dem Programmieren interessiere ich mich auch für Video-Bearbeitung und -Schnitt, bei der ich durchaus auch gute Grundkenntnisse durch Streaming und diverse Aufnahmen angeeignet habe.</p>
+			</main>
+			
+			<footer>
+				<span id="copy"></span>
 				<script>
-					document.getElementById("wwg").innerHTML = wwg;
+					document.getElementById("copy").innerHTML = copy;
 				</script>
-				- Startseite
-			</h1>
-			<nav id="mainNavigation">
-            <script>
-               var nav = new Navigation();
-					document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Startseite");
-            </script>
-			</nav>
-		</header>
-		
-		<h2>Hallo Welt!</h2>
-		<h2>Wölfe sind die besten Tiere in diesem Universum! Danach kommen Katzen UwU</h2>
-		
-		<p>Wenn ich mich kurz vorstellen darf, Mandy (a.k.a. LegecyWolf und White Wolfys Game). Auf meiner Homepage bekommt ihr einen kleinen Einblick zu meiner Person. Unter anderem Infos bezüglich beruflichen Werdegang, Hobbies und was es sonst noch (un)interessantes gibt</p>
-		<p>Ich bin gelernte Softwareentwicklerin mit guter Erfahrung in der Programmiersprache C# .NET, sowie in Datenbankentechnologien von Oracle und MySQL.</p>
-		<p>Neben dem Programmieren interessiere ich mich auch für Video-Bearbeitung und -Schnitt, bei der ich durchaus auch gute Grundkenntnisse durch Streaming und diverse Aufnahmen angeeignet habe.</p>
-		
-		<footer>
-			<span id="copy"></span>
-			<script>
-				document.getElementById("copy").innerHTML = copy;
-			</script>
-		</footer>
+			</footer>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	</body>
 </html>

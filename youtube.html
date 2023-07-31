@@ -10,144 +10,147 @@
 		<script src="js/main.min.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1 id="top">
-				<span id="wwg"></span>
+		<div class="container">
+			<header>
+				<h1 id="top">
+					<span id="wwg"></span>
+					<script>
+						document.getElementById("wwg").innerHTML = wwg;
+					</script>
+					- Hobbies - YouTube
+				</h1>
+				<nav id="mainNavigation">
+					<script>
+						var nav = new Navigation();
+						document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Hobbies", "YouTube");
+					</script>
+				</nav>
+			</header>
+			
+			<p>
+				Ich betreibe seit einiger Zeit verschiedene YouTube-Kanäle, die sich hauptsächlich mit Gaming beschäftigen.
+				Dies entwickelte sich in der Zeit, als ich für sehr lange krank war.
+				Um nicht komplett die Zeit mit nichtstun zu vergeuden, startete ich dieses Projekt.
+				In dieser Zeit habe ich das Schneiden von Videos, Bild- und Tonbearbeitung gelernt und führe es bis heute noch aus, sofern die Zeit es ermöglicht.
+			</p>
+			<p>
+				Meine ersten Let's Plays stammten aus Live-Aufzeichnungen auf Twitch.
+				Begonnen habe ich damit im September 2019, diese Aufnahmen waren stets mehrere Stunden lang.
+				Etwa ein Jahr später fing ich an die Episoden im schnitt etwa auf maximal 30 Minuten zu zuschneiden.
+				Jedoch waren auch diese bislang stets nur Streamaufzeichnungen.
+				Mein erstes richtiges YouTube-Exklusives Let's Play startete ende 2021.
+				Seitdem habe ich begonnen mein Kanal zu splitten.
+				Einige der älteren "Live-Let's-Plays" beginne ich nun als reguläre Let's Plays aufzunehmen.
+				Live-Aufzeichnungen von Twitch werden im entsprechendem VOD-Kanal hochgeladen.
+			</p>
+			<p>
+				Einige Videos passten nicht ganz ins Schema, sodass ich einen weiteren Kanal erstellt habe: Fundgrube.
+				Hier bin ich leider etwas weniger aktiv mangels Zeit.
+				Dieser Kanal soll Reviews zu Games enthalten, welche ich ganz aus meiner persönlichen Perspektive mit euch teile.
+				Mit Beginn dieses Kanals habe ich mich auch dazu entschieden meinen YouTube-Kanal-Namen auf "White Wolfys Game" umzubenennen.
+			</p>
+			<p>Folgend seht ihr eine Auflistung meiner Video-Projekte.</p>
+			<h2>Let's Play</h2>
+			<h3>Aktuelles Let's Play-Projekt:</h3>
+			<span id="lpCurrent"></span>
+			<script>
+				document.getElementById("lpCurrent").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AG0GFueI7mc6vOBm48CoARQ");
+			</script>
+			
+			<h3>Vergangene und abgeschlossene Projekte</h3>
+			<p>
+				Neben dem aktuellen Let's Play habe ich noch weitere Projekte abgeschlossen.
+				Diese könnt ihr hier alle abrufen: <a href="https://www.youtube.com/@WhiteWolfysGameLP" target="_blank">White Wolfys Game Let's Play Kanal</a>
+			</p>
+			<!--
+			<details>
+				<summary>Ratchet & Clank</summary>
+				<span id="lpRatchetAndClank1"></span>
 				<script>
-					document.getElementById("wwg").innerHTML = wwg;
+					document.getElementById("lpRatchetAndClank1").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGSIAd689tiLs3Vg1DSdSz0");
 				</script>
-				- Hobbies - YouTube
-			</h1>
-			<nav id="mainNavigation">
-            <script>
-               var nav = new Navigation();
-					document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Hobbies", "YouTube");
-            </script>
-			</nav>
-		</header>
-		
-		<p>
-			Ich betreibe seit einiger Zeit verschiedene YouTube-Kanäle, die sich hauptsächlich mit Gaming beschäftigen.
-			Dies entwickelte sich in der Zeit, als ich für sehr lange krank war.
-			Um nicht komplett die Zeit mit nichtstun zu vergeuden, startete ich dieses Projekt.
-			In dieser Zeit habe ich das Schneiden von Videos, Bild- und Tonbearbeitung gelernt und führe es bis heute noch aus, sofern die Zeit es ermöglicht.
-		</p>
-		<p>
-			Meine ersten Let's Plays stammten aus Live-Aufzeichnungen auf Twitch.
-			Begonnen habe ich damit im September 2019, diese Aufnahmen waren stets mehrere Stunden lang.
-			Etwa ein Jahr später fing ich an die Episoden im schnitt etwa auf maximal 30 Minuten zu zuschneiden.
-			Jedoch waren auch diese bislang stets nur Streamaufzeichnungen.
-			Mein erstes richtiges YouTube-Exklusives Let's Play startete ende 2021.
-			Seitdem habe ich begonnen mein Kanal zu splitten.
-			Einige der älteren "Live-Let's-Plays" beginne ich nun als reguläre Let's Plays aufzunehmen.
-			Live-Aufzeichnungen von Twitch werden im entsprechendem VOD-Kanal hochgeladen.
-		</p>
-		<p>
-			Einige Videos passten nicht ganz ins Schema, sodass ich einen weiteren Kanal erstellt habe: Fundgrube.
-			Hier bin ich leider etwas weniger aktiv mangels Zeit.
-			Dieser Kanal soll Reviews zu Games enthalten, welche ich ganz aus meiner persönlichen Perspektive mit euch teile.
-			Mit Beginn dieses Kanals habe ich mich auch dazu entschieden meinen YouTube-Kanal-Namen auf "White Wolfys Game" umzubenennen.
-		</p>
-		<p>Folgend seht ihr eine Auflistung meiner Video-Projekte.</p>
-		<h2>Let's Play</h2>
-		<h3>Aktuelles Let's Play-Projekt:</h3>
-		<span id="lpCurrent"></span>
-		<script>
-			document.getElementById("lpCurrent").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AG0GFueI7mc6vOBm48CoARQ");
-		</script>
-		
-		<h3>Vergangene und abgeschlossene Projekte</h3>
-		<p>
-			Neben dem aktuellen Let's Play habe ich noch weitere Projekte abgeschlossen.
-			Diese könnt ihr hier alle abrufen: <a href="https://www.youtube.com/@WhiteWolfysGameLP" target="_blank">White Wolfys Game Let's Play Kanal</a>
-		</p>
-		<!--
-		<details>
-			<summary>Ratchet & Clank</summary>
-			<span id="lpRatchetAndClank1"></span>
-			<script>
-				document.getElementById("lpRatchetAndClank1").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGSIAd689tiLs3Vg1DSdSz0");
-			</script>
-		</details>
-		<details>
-			<summary>New Pokémon Snap</summary>
-			<span id="lpNewPokemonSnap"></span>
-			<script>
-				document.getElementById("lpNewPokemonSnap").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGFTm5bcS2ZI-KzC4Z0xBGZ");
-			</script>
-		</details>
-		<details>
-			<summary>Stray (PS5)</summary>
-			<span id="lpStray"></span>
-			<script>
-				document.getElementById("lpStray").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AEqz14pIGeQ0CYMqyEOsylV");
-			</script>
-		</details>
-		<details>
-			<summary>Illusion of Time / Illusion of Gaia</summary>
-			<span id="lpIoT"></span>
-			<script>
-				document.getElementById("lpIoT").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGgK_OoXEbism9Ol3ckEIZd");
-			</script>
-		</details>
-		<details>
-			<summary>Pokémon Snap</summary>
-			<span id="lpPokemonSnap"></span>
-			<script>
-				document.getElementById("lpPokemonSnap").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AE1M5FDw6DaPnadCmJmDmQk");
-			</script>
-		</details>
-		<details>
-			<summary>Ōkami HD</summary>
-			<span id="lpOkami"></span>
-			<script>
-				document.getElementById("lpOkami").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AE3jVc1fCeupxMEZ1ZqPeKZ");
-			</script>
-		</details>
-		-->
-      <h2>Stream-VOD</h2>
-		<p>
-			Für meine Twitch-Streams habe ich ebenfalls einen YouTube-Kanal dafür erstellt, sollten die Streams mal verpasst worden sein.
-			Hier gibt es nicht wirklich viel mehr zu erzählen.
-			Dafür eignet sich eher die Sektion "Twitch" an.
-			Zu den Videos: <a href="https://www.youtube.com/@WhiteWolfysGameVOD" target="_blank">White Wolfys Game VOD Kanal</a>
-		</p>
+			</details>
+			<details>
+				<summary>New Pokémon Snap</summary>
+				<span id="lpNewPokemonSnap"></span>
+				<script>
+					document.getElementById("lpNewPokemonSnap").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGFTm5bcS2ZI-KzC4Z0xBGZ");
+				</script>
+			</details>
+			<details>
+				<summary>Stray (PS5)</summary>
+				<span id="lpStray"></span>
+				<script>
+					document.getElementById("lpStray").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AEqz14pIGeQ0CYMqyEOsylV");
+				</script>
+			</details>
+			<details>
+				<summary>Illusion of Time / Illusion of Gaia</summary>
+				<span id="lpIoT"></span>
+				<script>
+					document.getElementById("lpIoT").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AGgK_OoXEbism9Ol3ckEIZd");
+				</script>
+			</details>
+			<details>
+				<summary>Pokémon Snap</summary>
+				<span id="lpPokemonSnap"></span>
+				<script>
+					document.getElementById("lpPokemonSnap").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AE1M5FDw6DaPnadCmJmDmQk");
+				</script>
+			</details>
+			<details>
+				<summary>Ōkami HD</summary>
+				<span id="lpOkami"></span>
+				<script>
+					document.getElementById("lpOkami").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AE3jVc1fCeupxMEZ1ZqPeKZ");
+				</script>
+			</details>
+			-->
+			<h2>Stream-VOD</h2>
+			<p>
+				Für meine Twitch-Streams habe ich ebenfalls einen YouTube-Kanal dafür erstellt, sollten die Streams mal verpasst worden sein.
+				Hier gibt es nicht wirklich viel mehr zu erzählen.
+				Dafür eignet sich eher die Sektion "Twitch" an.
+				Zu den Videos: <a href="https://www.youtube.com/@WhiteWolfysGameVOD" target="_blank">White Wolfys Game VOD Kanal</a>
+			</p>
 
-      <h2>Fundgrube</h2>
-      <p>
-			Diesen Kanal habe ich mit der Idee erstellt, auch Videos zu produzieren, die etwas anderen Content als Let's Plays liefern.
-			Tatsächlich war die Idee hier Live-React-Videos von Twitch, sowie Reviews und Unboxings zu publizieren.
-			Bisher haben sich jedoch nur Reviews hier eingefunden.
-			Diese unterteile ich dabei in Retro-Reviews und Reviews zu aktuelleren Gaming-Titeln.
-			Im Endeffekt dreht es sich auch hier wieder um Spiele, jedoch detailierter erläutert, in dessen ich meine Meinung kund tue.
-			Videos auf diesem Kanal werden leider nicht so oft produziert, wie ich das gern wünsche.
-			Hauptmerkmal ist in erster Linie die mangelnde Zeit aufgrund von Arbeit, aber auch dass ich nicht über so viele Games sprechen kann.
-			Ein weiterer Grund ist auch, dass ich sehr viel krank bin.
-			Migräne, Depressionen und mein eher schlechtes Immunsystem tun auch ihr übriges.
-			Dennoch halte ich diesen Kanal am Leben.
-			Vielleicht kommt nochmal die Zeit, in der ich aktiver sein kann.
-			Zum Kanal und den Videos: <a href="https://www.youtube.com/@WhiteWolfysGameFundgrube" target="_blank">White Wolfys Game Fundgrube</a>
-		</p>
-		<p>
-			Mein Letztes Video auf diesem Kanal:<br />
-			<span id="latestVideo"></span>
-			<script>
-				document.getElementById("latestVideo").innerHTML = YoutubeFrame("GmDTF78dS9s");
-			</script>
-		</p>
+			<h2>Fundgrube</h2>
+			<p>
+				Diesen Kanal habe ich mit der Idee erstellt, auch Videos zu produzieren, die etwas anderen Content als Let's Plays liefern.
+				Tatsächlich war die Idee hier Live-React-Videos von Twitch, sowie Reviews und Unboxings zu publizieren.
+				Bisher haben sich jedoch nur Reviews hier eingefunden.
+				Diese unterteile ich dabei in Retro-Reviews und Reviews zu aktuelleren Gaming-Titeln.
+				Im Endeffekt dreht es sich auch hier wieder um Spiele, jedoch detailierter erläutert, in dessen ich meine Meinung kund tue.
+				Videos auf diesem Kanal werden leider nicht so oft produziert, wie ich das gern wünsche.
+				Hauptmerkmal ist in erster Linie die mangelnde Zeit aufgrund von Arbeit, aber auch dass ich nicht über so viele Games sprechen kann.
+				Ein weiterer Grund ist auch, dass ich sehr viel krank bin.
+				Migräne, Depressionen und mein eher schlechtes Immunsystem tun auch ihr übriges.
+				Dennoch halte ich diesen Kanal am Leben.
+				Vielleicht kommt nochmal die Zeit, in der ich aktiver sein kann.
+				Zum Kanal und den Videos: <a href="https://www.youtube.com/@WhiteWolfysGameFundgrube" target="_blank">White Wolfys Game Fundgrube</a>
+			</p>
+			<p>
+				Mein Letztes Video auf diesem Kanal:<br />
+				<span id="latestVideo"></span>
+				<script>
+					document.getElementById("latestVideo").innerHTML = YoutubeFrame("GmDTF78dS9s");
+				</script>
+			</p>
 
-		<a href="#top" id="back_to_top">
-         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
-          </svg>
-      </a>
-		
-		<footer>
-			<span id="copy"></span>
-			<script>
-				document.getElementById("copy").innerHTML = copy;
-			</script>
-		</footer>
+			<a href="#top" id="back_to_top">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+					<path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+				</svg>
+			</a>
+			
+			<footer>
+				<span id="copy"></span>
+				<script>
+					document.getElementById("copy").innerHTML = copy;
+				</script>
+			</footer>			
+		</div>
+
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	</body>
 </html>
