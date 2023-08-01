@@ -24,7 +24,13 @@ class Navigation{
    }
 
    BuildNav(currentPage, currentSubpage){
-      let html = '<ul class="nav nav-tabs justify-content-center">';
+      let html = '<div class="container-fluid bg-dark">';
+      html += '   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavi" aria-controls="mainNavi" aria-expanded="false" aria-label="Toggle navigation">';
+      html += '      <span class="navbar-toggler-icon"></span>';
+      html += '   </button>';
+      html += '   <div class="collapse navbar-collapse" id="mainNavi">';
+      html += '      <ul class="navbar-nav mx-auto">';
+
       for(let i = 0; i < this.page.length; i++){
          if(this.page[i].subpages.length > 1){
             html += this.#DropdownNavItem(currentPage, this.page[i], currentSubpage);
@@ -40,7 +46,9 @@ class Navigation{
       html += '   </li>';
       */
 
-      html += '</ul>';
+      html += '      </ul>';
+      html += '   </div>';
+      html += '</div>';
 
       return html;
    }
@@ -48,10 +56,10 @@ class Navigation{
    #DropdownNavItem(currentPage, page, currentSubpage){
       let html = '<li class="nav-item dropdown">';
       if(currentPage == page.name){
-         html += '   <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">' + page.name + '</a>';
+         html += '   <a class="nav-link dropdown-toggle actived" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">' + page.name + '</a>';
       }
       else {
-         html += '   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">' + page.name + '</a>';
+         html += '   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color: white;">' + page.name + '</a>';
       }
       html += '   <ul class="dropdown-menu">';
       for(let j = 0; j < page.subpages.length; j++){
@@ -62,7 +70,7 @@ class Navigation{
          {
             if(page.subpages[j].enabled){
                if(currentSubpage == page.subpages[j].name){
-                  html += '   <li><a class="dropdown-item active" aria-current="page" href="' + page.subpages[j].url + '">' + page.subpages[j].name + '</a></li>';
+                  html += '   <li><a class="dropdown-item activedSub" aria-current="page" href="' + page.subpages[j].url + '">' + page.subpages[j].name + '</a></li>';
                }
                else {
                   html += '   <li><a class="dropdown-item" href="' + page.subpages[j].url + '">' + page.subpages[j].name + '</a></li>';
@@ -83,10 +91,10 @@ class Navigation{
       let html = '<li class="nav-item">';
       if(page.enabled){
          if(currentPage == page.name){
-            html += '   <a class="nav-link active" aria-current="page" href="' + page.url + '">' + page.name + '</a>';
+            html += '   <a class="nav-link actived" aria-current="page" href="' + page.url + '">' + page.name + '</a>';
          }
          else {
-            html += '   <a class="nav-link" href="' + page.url + '">' + page.name + '</a>';
+            html += '   <a class="nav-link" href="' + page.url + '" style="color:white;">' + page.name + '</a>';
          }
       }
       else {

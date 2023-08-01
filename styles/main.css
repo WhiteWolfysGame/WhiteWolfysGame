@@ -16,15 +16,17 @@ a{
 	color: white;
 	border-radius: 5px;
 }
-a:visited{
-	color: rgb(215, 215, 215);
-}
 nav a:hover{
+	color: black;
 	background-color: darkgrey;
 }
 
-li .dropdown-item{
+nav li .dropdown-item{
 	color: black;
+}
+nav li .dropdown-item:hover{
+	color: black;
+	background-color: darkgrey;
 }
 
 dl{
@@ -108,6 +110,15 @@ hr + div{
 }
 .actived:hover{
 	background-color: darkgrey;
+}
+
+.activedSub{
+	color:rgb(255, 255, 255);
+	background-color: rgb(32, 73, 255);
+}
+.activedSub:hover{
+	color:rgb(255, 255, 255);
+	background-color: rgb(32, 73, 255);
 }
 
 .navbar-toggler-icon {

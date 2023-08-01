@@ -13,14 +13,14 @@
    <body>
       <div class="container">
          <header>
-            <h1 id="top">
+            <h1 id="top" class="text-center">
                <span id="wwg"></span>
                <script>
                   document.getElementById("wwg").innerHTML = wwg;
                </script>
                - Projektliste
             </h1>
-            <nav id="mainNavigation">
+            <nav id="mainNavigation" class="navbar navbar-expand-lg">
                <script>
                   var nav = new Navigation();
                   document.getElementById("mainNavigation").innerHTML = nav.BuildNav("Projektliste");
