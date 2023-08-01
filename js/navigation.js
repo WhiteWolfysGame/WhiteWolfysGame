@@ -5,7 +5,7 @@ class Navigation{
       this.AddPage("Startseite", "index.html", "", "", true);
       this.AddPage("Werdegang", "werdegang.html", "", "", true);
       this.AddPage("Projektliste", "projektliste.html", "", "", true);
-      //this.AddPage("Kenntnisse", "kenntnisse.html", "", "", true);
+      this.AddPage("Kenntnisse", "kenntnisse.html", "", "", true);
 
       this.AddPage("Hobbies", "#", "Wolf", "wolf.html", true);
       this.AddPage("Hobbies", "#", "---");

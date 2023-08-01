@@ -13,7 +13,8 @@
 		<div class="container">
 			<header>
 				<h1 id="top" class="text-center">
-					<span id="wwg"></span>
+					<img src="graphics/Logo_WolfysGame_ohne_Hintergrund__ohne_Text__mit_Glow__512x512.png" width="100px" alt="Logo" />
+               <span id="wwg"></span>
 					<script>
 						document.getElementById("wwg").innerHTML = wwg;
 					</script>
@@ -52,10 +53,16 @@
 			<p>Folgend seht ihr eine Auflistung meiner Video-Projekte.</p>
 			<h2>Let's Play</h2>
 			<h3>Aktuelles Let's Play-Projekt:</h3>
-			<span id="lpCurrent"></span>
-			<script>
-				document.getElementById("lpCurrent").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AG0GFueI7mc6vOBm48CoARQ");
-			</script>
+			<div class="row row-cols-1 row-cols-md-3">
+            <div class="col"></div>
+            <div class="col">
+					<span id="lpCurrent"></span>
+					<script>
+						document.getElementById("lpCurrent").innerHTML = YoutubePlaylistFrame("PLhNpsUNFG6AG0GFueI7mc6vOBm48CoARQ");
+					</script>
+            </div>
+            <div class="col"></div>
+         </div>
 			
 			<h3>Vergangene und abgeschlossene Projekte</h3>
 			<p>
@@ -131,10 +138,17 @@
 			</p>
 			<p>
 				Mein Letztes Video auf diesem Kanal:<br />
-				<span id="latestVideo"></span>
-				<script>
-					document.getElementById("latestVideo").innerHTML = YoutubeFrame("GmDTF78dS9s");
-				</script>
+				<div class="row row-cols-1 row-cols-md-3">
+					<div class="col"></div>
+					<div class="col">
+						<span id="latestVideo"></span>
+						<script>
+							document.getElementById("latestVideo").innerHTML = YoutubeFrame("GmDTF78dS9s");
+						</script>
+					</div>
+					<div class="col"></div>
+				</div>
+	
 			</p>
 
 			<a href="#top" id="back_to_top">

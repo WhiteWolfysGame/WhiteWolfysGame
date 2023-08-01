@@ -128,3 +128,11 @@ hr + div{
  #myTab {
 	color:#ffffff;
  }
+
+ .container{
+	background-color: rgba(33, 37, 41, 0.2);
+ }
+
+ .navbar-toggler:focus{
+	border-color: white;
+ }
