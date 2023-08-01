@@ -32,1101 +32,1129 @@
          <main>
             <h2>Projektliste</h2>
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="software-tab" data-bs-toggle="tab" data-bs-target="#software" type="button" role="tab" aria-controls="software" aria-selected="true">Software</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="web_php-tab" data-bs-toggle="tab" data-bs-target="#web_php" type="button" role="tab" aria-controls="web_php" aria-selected="false">Webanwendungen (mit PHP)</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="web_asp-tab" data-bs-toggle="tab" data-bs-target="#web_asp" type="button" role="tab" aria-controls="web_asp" aria-selected="false">Webanwendungen (mit ASP.NET/C#)</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="games-tab" data-bs-toggle="tab" data-bs-target="#games" type="button" role="tab" aria-controls="games" aria-selected="false">Spiele</button>
-               </li>
-            </ul>
-            
-            <div class="tab-content">
-               <div class="tab-pane fade show active" id="software" role="tabpanel" aria-labelledby="software-tab">
-                  
-                  <details>
-                     <summary>10/2011 - 11/2011: Projekt - Einfaches Verschlüsselungsprogramm</summary>
+            <div class="d-flex align-items-start">
+               <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                 <button class="nav-link active" id="v-pills-software-tab" data-bs-toggle="pill" data-bs-target="#v-pills-software" type="button" role="tab" aria-controls="v-pills-software" aria-selected="true">Software</button>
+                 <button class="nav-link" id="v-pills-web_php-tab" data-bs-toggle="pill" data-bs-target="#v-pills-web_php" type="button" role="tab" aria-controls="v-pills-web_php" aria-selected="false">Web (PHP)</button>
+                 <button class="nav-link" id="v-pills-web_asp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-web_asp" type="button" role="tab" aria-controls="v-pills-web_asp" aria-selected="false">Web (ASP.NET/C#)</button>
+                 <button class="nav-link" id="v-pills-games-tab" data-bs-toggle="pill" data-bs-target="#v-pills-games" type="button" role="tab" aria-controls="v-pills-games" aria-selected="false">Spiele</button>
+               </div>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Schulprojekt</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2008</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-            
-                     <div class="description">
-                        <p>
-                           Ein Tool, mit der man Texte und sonstige Daten verschlüsseln kann.
-                           Es gibt verschiedene Verschlüsselungsmethoden, hier wird das Caesar-Prinzip angewendet.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 3.5</li>
-                           <li>Datenbank: keine</li>
-                           <li>GUI: Windows Forms</li>
-                           <li>Oberflächendesign aufgeteilt in Originaltext zu verschlüsselter Text sowie umgekehrt</li>
-                           <li>Klasse Verschluesselung erstellt mit den Methoden verschluesseln und entschluesseln</li>
-                           <li>Verschlüsselungsprozedur mit einer Berechnung durch zwei mitgelieferten Zahlen (VID)</li>
-                        </ul>
-                     </div>
-                  </details>
+               <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-software" role="tabpanel" aria-labelledby="v-pills-software-tab" tabindex="0">
+                     <details>
+                        <summary>10/2011 - 11/2011: Projekt - Einfaches Programm zur Verschlüsselung</summary>
 
-                  <details>
-                     <summary>04/2013 - 08/2013: Projekt - Erweiterung eines Media Players</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privatperson</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-            
-                     <div class="description">
-                        <p>
-                           Ein bestehender Media Player soll um weitere Funktionen funktionen erweitert werden:<br />
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Schulprojekt</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2008</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+               
+                        <div class="description">
+                           <p>
+                              Ein Tool, mit der man Texte und sonstige Daten verschlüsseln kann.
+                              Es gibt verschiedene Verschlüsselungsmethoden, hier wird das Caesar-Prinzip angewendet.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
                            <ul>
-                              <li>Abspielen einer DVD</li>
-                              <li>Playlist-Verwaltung</li>
-                              <li>Implementierung weiterer Dateiformate von Audio- und Videodateien</li>
+                              <li>Programmiersprachen: C#/ .NET 3.5</li>
+                              <li>Datenbank: keine</li>
+                              <li>GUI: Windows Forms</li>
+                              <li>Oberflächendesign aufgeteilt in Originaltext zu verschlüsselter Text sowie umgekehrt</li>
+                              <li>Klasse Verschluesselung erstellt mit den Methoden verschluesseln und entschluesseln</li>
+                              <li>Verschlüsselungsprozedur mit einer Berechnung durch zwei mitgelieferten Zahlen (VID)</li>
                            </ul>
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: keine</li>
-                           <li>GUI: Windows Forms
+                        </div>
+                     </details>
+
+                     <details>
+                        <summary>04/2013 - 08/2013: Projekt - Erweiterung eines Media Players</summary>
+
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privatperson</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+               
+                        <div class="description">
+                           <p>
+                              Ein bestehender Media Player soll um weitere Funktionen funktionen erweitert werden:<br />
                               <ul>
-                                 <li>Menüleitste "Datei" um Option DVD starten erweitert &#8250; Alternativ-Fenster zum Abspielen, weil Hauptabspielfenster nicht will</li>
-                                 <li>Split-Screen um Playlist anzuzeigen und zu verwalten</li>
-                                 <li>Trackbar ergänzt für Lautstärkeregelung</li>
+                                 <li>Abspielen einer DVD</li>
+                                 <li>Playlist-Verwaltung</li>
+                                 <li>Implementierung weiterer Dateiformate von Audio- und Videodateien</li>
                               </ul>
-                           </li>
-                           <li>Zufallswiedergabe der Playlist</li>
-                           <li>Audio- und Videodateien können jederzeit hinzugefügt und abgespielt werden</li>
-                           <li>Unterstützte Dateiformate: wma und avi, neue Formate: mp3 und mp4</li>
-                        </ul>
-                     </div>
-                  </details>
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: keine</li>
+                              <li>GUI: Windows Forms
+                                 <ul>
+                                    <li>Menüleitste "Datei" um Option DVD starten erweitert &#8250; Alternativ-Fenster zum Abspielen, weil Hauptabspielfenster nicht will</li>
+                                    <li>Split-Screen um Playlist anzuzeigen und zu verwalten</li>
+                                    <li>Trackbar ergänzt für Lautstärkeregelung</li>
+                                 </ul>
+                              </li>
+                              <li>Zufallswiedergabe der Playlist</li>
+                              <li>Audio- und Videodateien können jederzeit hinzugefügt und abgespielt werden</li>
+                              <li>Unterstützte Dateiformate: wma und avi, neue Formate: mp3 und mp4</li>
+                           </ul>
+                        </div>
+                     </details>
 
-                  <details>
-                     <summary>09/2015 - 01/2017: Projekt - SAZ ScriptManager</summary>
+                     <details>
+                        <summary>09/2015 - 01/2017: Projekt - SAZ ScriptManager</summary>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>Oracle SQL-Developer</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>Oracle SQL-Developer</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                     <div class="description">
-                        <p>
-                           Erstellung eines neuen Script-Manager-Tools für häufig genutzte SQL-Befehle.
-                           Es soll ein älteres VB6-Programm ersetzt werden, welches von der Performance nicht länger tragbar ist.
-                           Dieses Tool konnte zuvor Scripte nur aus der Datenbank auslesen.
-                           Diese mussten immer in der Datenbank-Verwaltungssoftware aufwendig verwaltet werden.
-                           Dem entsprechend soll es die Möglichkeit geben, Scripte direkt im Programm zu verwalten.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: Oracle</li>
-                           <li>GUI: Windows Forms
-                              <ul>
-                                 <li>Menüführung via Office Ribbon</li>
-                                 <li>Angabe von Kategorien und Präfixen zur Klassifizierung</li>
-                                 <li>Scripte werden immer in einer Kategorie mit einem bestimmten Präfix gespeichert</li>
-                                 <li>Beschreibung eines Scriptes ist optional und kann ggfs. ausgeblendet werden</li>
-                                 <li>Farbliche Hervorhebung reservierter SQL-Bezeichnungen, Zeichenketten, Zahlen und Kommentare</li>
-                                 <li>Programmstart optional mit Parametern, um ein bestimmtes Script direkt beim Starten abrufen zu können</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
+                        <div class="description">
+                           <p>
+                              Erstellung eines neuen Script-Manager-Tools für häufig genutzte SQL-Befehle.
+                              Es soll ein älteres VB6-Programm ersetzt werden, welches von der Performance nicht länger tragbar ist.
+                              Dieses Tool konnte zuvor Scripte nur aus der Datenbank auslesen.
+                              Diese mussten immer in der Datenbank-Verwaltungssoftware aufwendig verwaltet werden.
+                              Dem entsprechend soll es die Möglichkeit geben, Scripte direkt im Programm zu verwalten.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: Oracle</li>
+                              <li>GUI: Windows Forms
+                                 <ul>
+                                    <li>Menüführung via Office Ribbon</li>
+                                    <li>Angabe von Kategorien und Präfixen zur Klassifizierung</li>
+                                    <li>Scripte werden immer in einer Kategorie mit einem bestimmten Präfix gespeichert</li>
+                                    <li>Beschreibung eines Scriptes ist optional und kann ggfs. ausgeblendet werden</li>
+                                    <li>Farbliche Hervorhebung reservierter SQL-Bezeichnungen, Zeichenketten, Zahlen und Kommentare</li>
+                                    <li>Programmstart optional mit Parametern, um ein bestimmtes Script direkt beim Starten abrufen zu können</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
 
-                  <details>
-                     <summary>09/2015 - 01/2017: Projekt - Überarbeitung des Programms SupportTools "UserRoles"</summary>
+                     <details>
+                        <summary>09/2015 - 01/2017: Projekt - Überarbeitung des Programms SupportTools "UserRoles"</summary>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>Oracle SQL-Developer</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>Oracle SQL-Developer</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                     <div class="description">
-                        <p>
-                           Es soll ein Modul aus einer bestehenden Projektmappe überarbeitet werden.
-                           Ziel ist dabei die Usability zu erhöhen.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: Oracle</li>
-                           <li>GUI: WPF/XAML</li>
-                           <li>Erweiterung Datenfelder um neue Elemente anzeigen zu lassen</li>
-                           <li>Anpassung der Benutzeroberfläche für neuer, sowie Entfernung älterer nicht mehr genutzter Elemente</li>
-                           <li>SQL-Scripte vereinheitlicht</li>
-                        </ul>
-                     </div>
-                  </details>
+                        <div class="description">
+                           <p>
+                              Es soll ein Modul aus einer bestehenden Projektmappe überarbeitet werden.
+                              Ziel ist dabei die Usability zu erhöhen.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: Oracle</li>
+                              <li>GUI: WPF/XAML</li>
+                              <li>Erweiterung Datenfelder um neue Elemente anzeigen zu lassen</li>
+                              <li>Anpassung der Benutzeroberfläche für neuer, sowie Entfernung älterer nicht mehr genutzter Elemente</li>
+                              <li>SQL-Scripte vereinheitlicht</li>
+                           </ul>
+                        </div>
+                     </details>
 
-                  <details>
-                     <summary>02/2018 - 04/2018: Projekt - Erweiterung SupportTools "OutboundUndo"</summary>
+                     <details>
+                        <summary>02/2018 - 04/2018: Projekt - Erweiterung SupportTools "OutboundUndo"</summary>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="3">Weitere Software/Tools:</td>
-                              <td>Oracle SQL-Developer</td>
-                           </tr>
-                           <tr>
-                              <td>Umplet</td>
-                           </tr>
-                           <tr>
-                              <td>DrawIO</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="3">Weitere Software/ Tools:</td>
+                                 <td>Oracle SQL-Developer</td>
+                              </tr>
+                              <tr>
+                                 <td>Umplet</td>
+                              </tr>
+                              <tr>
+                                 <td>DrawIO</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                     <div class="description">
-                        <p>
-                           Es soll ein Modul aus einer Projektmappe überarbeitet werden.
-                           Ziel dabei ist es mögliche Dateninkonsistenzen zu beheben bevor es zur eigentlichen Ausführung des Programmes kommt.
-                           Auch sollen gesperrte Daten bearbeitet werden dürfen.
-                           Es handelt sich dabei um ein Tool zur Erstellung von Wiedervorlagen (erneute Vorlage von Adressen) für CallCenter-Mitarbeiter.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: Oracle</li>
-                           <li>GUI: WPF/XAML</li>
-                           <li>Analyse der einzelnen Phasen innerhalb eines Prozesses im CallCenter (von Anrufbeginn bis Abschluss)</li>
-                           <li>Erstellung möglicher Fehler-Konstellationen</li>
-                           <li>Aufarbeitung einer plausiblen Prüfung, ob es Dateninkonsistenzen gibt mit eventueller Korrektur (lt. Vorgabe)</li>
-                           <li>Aufhebung der Überprüfung, ob ein Satz zur weiteren Verarbeitung gesperrt bleiben sollen (denn es soll immer eine Wiedervorlage möglich sein können) </li>
-                        </ul>
-                     </div>
-                  </details>
+                        <div class="description">
+                           <p>
+                              Es soll ein Modul aus einer Projektmappe überarbeitet werden.
+                              Ziel dabei ist es mögliche Dateninkonsistenzen zu beheben bevor es zur eigentlichen Ausführung des Programmes kommt.
+                              Auch sollen gesperrte Daten bearbeitet werden dürfen.
+                              Es handelt sich dabei um ein Tool zur Erstellung von Wiedervorlagen (erneute Vorlage von Adressen) für CallCenter-Mitarbeiter.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: Oracle</li>
+                              <li>GUI: WPF/XAML</li>
+                              <li>Analyse der einzelnen Phasen innerhalb eines Prozesses im CallCenter (von Anrufbeginn bis Abschluss)</li>
+                              <li>Erstellung möglicher Fehler-Konstellationen</li>
+                              <li>Aufarbeitung einer plausiblen Prüfung, ob es Dateninkonsistenzen gibt mit eventueller Korrektur (lt. Vorgabe)</li>
+                              <li>Aufhebung der Überprüfung, ob ein Satz zur weiteren Verarbeitung gesperrt bleiben sollen (denn es soll immer eine Wiedervorlage möglich sein können) </li>
+                           </ul>
+                        </div>
+                     </details>
 
-                  <details>
-                     <summary>09/2015 - heute: Projekt - Klassenbibliothek "Utils"</summary>
+                     <details>
+                        <summary>09/2015 - heute: Projekt - Klassenbibliothek "Utils"</summary>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privat und Interessierte</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2022</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>ChatGPT</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privat und Interessierte</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2022</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>ChatGPT</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                     <div class="description">
-                        <p>
-                           Ein Tool, welches eine gewisse Hilfe für verschiedene Setups für den Stream bereitstellt.
-                           Das Programm soll u.A. mit Parametern gestartet werden können, um gezielte Module anzusprechen.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 6.0</li>
-                           <li>GUI: Windows Forms</li>
-                           <li>Erstellung diverser Module:
-                              <ul>
-                                 <li>Anwendungskonfiguration (Herzstück der Anwendung um wichtige Einstellung zu definieren)
-                                    <ul>
-                                       <li>Clips: Diefinition von mehreren Clip-Ordnern, jedoch kann nur eines aktiv sein, sowie Festlegung der Prioritätenreduktion</li>
-                                       <li>Dateinamen-Cast: Für Dateinamen gelten gewisse Restriktionen. Hier kann die Einstellung definiert werden, wie gewisse Zeichen(ketten) im Programm tatsächlich dargestellt werden sollen</li>
-                                       <li>Youtube neueste Videos: Definition von mehreren Kanälen, zu denen die X neuesten Thumbails von Videos mit einer Anzeigedauer Y dargestellt werden</li>
-                                       <li>Youtube Playlists: Definition von mehreren Playlisten, wovon jedoch immer nur eins als aktiv eingestellt werden kann</li>
-                                       <li>Twitch: Erstellung einer Oauth, um damit in diesem Tool weiter arbeiten zu können. Zusätzlich ist ein Zitat-Bot implementiert, welches mit einem definiterten Command zufällig abgerufen werden kann. Es können hier auch mehrere Zitate dafür hinterlegt werden</li>
-                                       <li>Speicherung in einer JSON-Datei sowie direkt Navigation zu dieser</li>
-                                       <li>Powershell-Dateien können auf Knopfdruck erstellt werden um gezielt Module der Anwendung zu starten. (Erstellung von Text-Dateien um die Process-ID des Moduls zu hinterlegen. Für die Module werden immer Paare erstellt (Start, Exit)</li>
-                                    </ul>
-                                 </li>
-                                 <li>Clip Verwaltung: Möglichkeit Clips strukturiert einzusehen und ggfs. zu bearbeiten. Greift auf die Definition des aktiven Clip-Ordners zu</li>
-                                 <li>Clip Viewer: Abspielen von Clips. Greift auf die Definition des aktiven Clip-Ordners zu. Mit Abspielen wird eine Textdatei mit Informationen des aktuellen Clips generiert</li>
-                                 <li>Countdown: Hier wird ein Countdown dargestellt. Dieser zählt sofort runter, sobald das Fenster geladen ist. Parametrisierter Startwert kann Länge des Countdowns definieren</li>
-                                 <li>Youtube Neueste Videos: Zeigt in einem Interval die neuesten Videos der, in den Einstellungen definierten, Kanäle an</li>
-                                 <li>Youtube Playlist Player: Hier wird eine, in den Einstellungen definierten, aktiven Playlist abgespielt. Mit dem Abspielen wird eine Textdatei mit Informationen des akutellen Playlist-Titels generiert</li>
-                                 <li>Twitch (Bot Light): kann nur gestartet werden, wenn eine Twitch-Oauth in den Einstellungen erstellt wurde. Sie zeigt den aktuellen Status des Twitch-Streams an und kann auf knopfdruck aktualisiert werden. Mit geöffnetem Fenster (auch im Hintergrund) können so automatisiert Zitate ausgegeben werden, sofern der entsprechende Command im Twitch-Chat abgeschickt wurde.</li>
-                                 <li><strong>weiteres Modul ist bereits geplant und in Arbeit...</strong></li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
+                        <div class="description">
+                           <p>
+                              Ein Tool, welches eine gewisse Hilfe für verschiedene Setups für den Stream bereitstellt.
+                              Das Programm soll u.A. mit Parametern gestartet werden können, um gezielte Module anzusprechen.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 6.0</li>
+                              <li>GUI: Windows Forms</li>
+                              <li>Erstellung diverser Module:
+                                 <ul>
+                                    <li>Anwendungskonfiguration (Herzstück der Anwendung um wichtige Einstellung zu definieren)
+                                       <ul>
+                                          <li>Clips: Diefinition von mehreren Clip-Ordnern, jedoch kann nur eines aktiv sein, sowie Festlegung der Prioritätenreduktion</li>
+                                          <li>Dateinamen-Cast: Für Dateinamen gelten gewisse Restriktionen. Hier kann die Einstellung definiert werden, wie gewisse Zeichen(ketten) im Programm tatsächlich dargestellt werden sollen</li>
+                                          <li>Youtube neueste Videos: Definition von mehreren Kanälen, zu denen die X neuesten Thumbails von Videos mit einer Anzeigedauer Y dargestellt werden</li>
+                                          <li>Youtube Playlists: Definition von mehreren Playlisten, wovon jedoch immer nur eins als aktiv eingestellt werden kann</li>
+                                          <li>Twitch: Erstellung einer Oauth, um damit in diesem Tool weiter arbeiten zu können. Zusätzlich ist ein Zitat-Bot implementiert, welches mit einem definiterten Command zufällig abgerufen werden kann. Es können hier auch mehrere Zitate dafür hinterlegt werden</li>
+                                          <li>Speicherung in einer JSON-Datei sowie direkt Navigation zu dieser</li>
+                                          <li>Powershell-Dateien können auf Knopfdruck erstellt werden um gezielt Module der Anwendung zu starten. (Erstellung von Text-Dateien um die Process-ID des Moduls zu hinterlegen. Für die Module werden immer Paare erstellt (Start, Exit)</li>
+                                       </ul>
+                                    </li>
+                                    <li>Clip Verwaltung: Möglichkeit Clips strukturiert einzusehen und ggfs. zu bearbeiten. Greift auf die Definition des aktiven Clip-Ordners zu</li>
+                                    <li>Clip Viewer: Abspielen von Clips. Greift auf die Definition des aktiven Clip-Ordners zu. Mit Abspielen wird eine Textdatei mit Informationen des aktuellen Clips generiert</li>
+                                    <li>Countdown: Hier wird ein Countdown dargestellt. Dieser zählt sofort runter, sobald das Fenster geladen ist. Parametrisierter Startwert kann Länge des Countdowns definieren</li>
+                                    <li>Youtube Neueste Videos: Zeigt in einem Interval die neuesten Videos der, in den Einstellungen definierten, Kanäle an</li>
+                                    <li>Youtube Playlist Player: Hier wird eine, in den Einstellungen definierten, aktiven Playlist abgespielt. Mit dem Abspielen wird eine Textdatei mit Informationen des akutellen Playlist-Titels generiert</li>
+                                    <li>Twitch (Bot Light): kann nur gestartet werden, wenn eine Twitch-Oauth in den Einstellungen erstellt wurde. Sie zeigt den aktuellen Status des Twitch-Streams an und kann auf knopfdruck aktualisiert werden. Mit geöffnetem Fenster (auch im Hintergrund) können so automatisiert Zitate ausgegeben werden, sofern der entsprechende Command im Twitch-Chat abgeschickt wurde.</li>
+                                    <li><strong>weiteres Modul ist bereits geplant und in Arbeit...</strong></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
 
-                  <details>
-                     <summary>09/2022 - heute: Projekt - LiveStreamHelper</summary>
+                     <details>
+                        <summary>09/2022 - heute: Projekt - LiveStreamHelper</summary>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privat und Interessierte</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="3">Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010 (bis 06/2018)</td>
-                           </tr>
-                           <tr>
-                              <td>Microsoft Visual Studio 2012 (bis 11/2022)</td>
-                           </tr>
-                           <tr>
-                              <td>Microsoft Visual Studio 2022</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>ChatGPT</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privat und Interessierte</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2012 (bis 11/2022)</td>
+                              </tr>
+                              <tr>
+                                 <td>Microsoft Visual Studio 2022</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>ChatGPT</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                     <div class="description">
-                        <p>
-                           Die Utils-Library ist eine Zusammenstellung verschiedenster Funktionen, die mir immer wieder geholfen haben, meinen Quellcode zu strukturieren.
-                           Dabei sind Methoden entstanden, die ich universell anwenden konnte, ohne dass ich diese immer wieder erneut schreiben musste.
-                           Somit ist inzwischen eine kleine, aber doch recht umfangreiche, Bibliothek entspanden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen:
-                              <ul>
-                                 <li>C#/.NET 4.0 (bis 06/2018)</li>
-                                 <li>C#/.NET 4.5 (bis 11/2022)</li>
-                                 <li>C#/.NET 6.0</li>
-                              </ul>
-                           </li>
-                           <li>GUI: Windows Forms (nur zum Testen als eigenes Mini-Projekt)</li>
-                           <li>Erstellung diverser Module:
-                              <ul>
-                                 <li>"MethodExtensions:" Statische Klasse zur Erweiterung von verhiedenen Datentypen
-                                    <ul>
-                                       <li>String-Extension</li>
-                                       <li>Numieric-Extension</li>
-                                       <li>DateTime-Extension</li>
-                                       <li>TimeSpan-Extension</li>
-                                       <li>ListView-Extension</li>
-                                       <li>DataGridViewRowCollection-Extension</li>
-                                    </ul>
-                                 </li>
-                                 <li>CSV-Reader: Einfache Implementierung zum Lesen von CSV-Dateien</li>
-                                 <li>Json: Vereinfachte Implementierung zum Speichern und Laden von Objekten in und aus Json-Dateien. (Verwendet Newtonsoft.Json)</li>
-                                 <li>ExtendedStopwatch: Stellt eine erweiterte Gruppe von Methoden und Eigenschaften bereit, mit denen die verstrichene Zeit exakt gemessen und mit einem bereits vorhandenen Startwert weitergearbeitet werden kann</li>
-                                 <li>YouTube: Vereinfachte Nutzung um gewisse Überprüfungen vorzunehmen und Daten zu erhalten (Playlisten, Videos, Kanäle)</li>
-                                 <li>Twitch: Vereinfachte Verwendung um Oauth zu generieren sowie Informationen einzuholen. Es beinhaltet auch einen Mini-Chatbot, um den Chat zu lesen und mit gewissen Funktionen (automatisiert) in den Chat zu schreiben</li>
-                                 <li>GlobalHotkey: Vereinfachte Verwendung zur Definition von Globalen Hotkeys und damit gebundenen auszuführenden Methoden (Action)</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-               </div>
+                        <div class="description">
+                           <p>
+                              Die Utils-Library ist eine Zusammenstellung verschiedenster Funktionen, die mir immer wieder geholfen haben, meinen Quellcode zu strukturieren.
+                              Dabei sind Methoden entstanden, die ich universell anwenden konnte, ohne dass ich diese immer wieder erneut schreiben musste.
+                              Somit ist inzwischen eine kleine, aber doch recht umfangreiche, Bibliothek entspanden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen:
+                                 <ul>
+                                    <li>C#/ .NET 4.0 (bis 06/2018)</li>
+                                    <li>C#/ .NET 4.5 (bis 11/2022)</li>
+                                    <li>C#/ .NET 6.0</li>
+                                 </ul>
+                              </li>
+                              <li>GUI: Windows Forms (nur zum Testen als eigenes Mini-Projekt)</li>
+                              <li>Erstellung diverser Module:
+                                 <ul>
+                                    <li>"MethodExtensions:" Statische Klasse zur Erweiterung von verhiedenen Datentypen
+                                       <ul>
+                                          <li>String-Extension</li>
+                                          <li>Numieric-Extension</li>
+                                          <li>DateTime-Extension</li>
+                                          <li>TimeSpan-Extension</li>
+                                          <li>ListView-Extension</li>
+                                          <li>DataGridViewRowCollection-Extension</li>
+                                       </ul>
+                                    </li>
+                                    <li>CSV-Reader: Einfache Implementierung zum Lesen von CSV-Dateien</li>
+                                    <li>Json: Vereinfachte Implementierung zum Speichern und Laden von Objekten in und aus Json-Dateien. (Verwendet Newtonsoft.Json)</li>
+                                    <li>ExtendedStopwatch: Stellt eine erweiterte Gruppe von Methoden und Eigenschaften bereit, mit denen die verstrichene Zeit exakt gemessen und mit einem bereits vorhandenen Startwert weitergearbeitet werden kann</li>
+                                    <li>YouTube: Vereinfachte Nutzung um gewisse Überprüfungen vorzunehmen und Daten zu erhalten (Playlisten, Videos, Kanäle)</li>
+                                    <li>Twitch: Vereinfachte Verwendung um Oauth zu generieren sowie Informationen einzuholen. Es beinhaltet auch einen Mini-Chatbot, um den Chat zu lesen und mit gewissen Funktionen (automatisiert) in den Chat zu schreiben</li>
+                                    <li>GlobalHotkey: Vereinfachte Verwendung zur Definition von Globalen Hotkeys und damit gebundenen auszuführenden Methoden (Action)</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+                  </div>
 
-               <div class="tab-pane fade" id="web_php" role="tabpanel" aria-labelledby="web_php-tab">
+                  <div class="tab-pane fade" id="v-pills-web_php" role="tabpanel" aria-labelledby="v-pills-web_php-tab" tabindex="0">
+                     <details>
+                        <summary>06/2011 - 06/2015: Projekt - Lesezeichen mit zugehöriger Verwaltung</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privatperson</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2">Weitere Software/ Tools:</td>
+                                 <td>DBDesigner 4</td>
+                              </tr>
+                              <tr>
+                                 <td>Paint.NET</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              In diesem Projekt geht es darum ein Lesezeichensystem direkt auf die Startseite eines beliebigen Browsers zu generieren.
+                              Dabei sollen Ordnerstrukturen und Links, sowie die Navigation vereinfacht dargestellt werden.
+                              W3C wird hier zurzeit noch nicht beachtet, ändert sich, sobald alle Funktionen nahezu sehr gut funktionieren und es in der Darstellung keine Mängel gibt.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Top-Navigation zum Switchen der Lesezeichendarstellung/ Oberflächendesign/ Lesezeichenverwaltung</li>
+                                    <li>Navigation der Ordner und Lesezeichen mit einem Roll-Over-Effekt</li>
+                                    <li>Persönliches Design, jedoch nur mit Farben möglich (keine Hintergrundbilder), Farbauswahl ermöglicht mit JavaScript</li>
+                                 </ul>
+                              </li>
+                              <li>Ordnerstruktur bis zu vier Ebenen möglich</li>
+                              <li>Funktionen zur Überprüfung, ob es sich um ein Lesezeichen- oder Ordner-Element handelt</li>
+                              <li>Prüfung ob sich Links im Ordner befinden um ein Löschen zu ermöglichen oder nicht</li>
+                              <li>Hilfemenü kann nur vom Administrator erweitert werden</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>01/2012 - 05/2012: Projekt - Erstellung einer neuen Webseite</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>gemeinnützige Organisation</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="3">Weitere Software/ Tools:</td>
+                                 <td>DBDesigner 4</td>
+                              </tr>
+                              <tr>
+                                 <td>Filezilla</td>
+                              </tr>
+                              <tr>
+                                 <td>Paint Tool SAI</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Komplettüberarbeitung der vorhandenen Weboberfläche in eine neue "frischere" Darstellung sowie neuen Funktionen.
+                              Dabei soll von den rein statisch aufgebauten Seiten in eine dynamische Oberfläche gewandelt werden, um Eingaben und Daten vereinfacht zu hinterlegen, weil sonst immer direkt im Script gearbeitet werden muss.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Aufbau einer neuen Container-Struktur, weg von der Tabellen-Struktur</li>
+                                    <li>Aufbau eines Gästebuchs mit einer einfachen Spam-Schutzmaßnahme (Captcha)</li>
+                                    <li>Administrative Verwaltung für Mitarbeiter</li>
+                                    <li>Notizblock, um Daten und Informationen für andere Mitarbeiter zu hinterlassen</li>
+                                    <li>Generierung von Kunden- und Administrationskonten</li>
+                                    <li>Einbau eines Terminkalenders mit Kalenderdarstellung</li>
+                                 </ul>
+                              </li>
+                              <li>Funktionen zum Sperren eines Benutzers auf Basis von E-mail und/ oder IP-Adresse</li>
+                              <li>Funktion zum Versenden und Abrufen von E-Mails eingebaut (ist jedoch ausbaufähig)</li>
+                              <li>Kundensupport</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>12/2012 - 02/2013: Projekt - Gameverwaltung</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privatperson</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2">Weitere Software/ Tools:</td>
+                                 <td>DBDesigner 4</td>
+                              </tr>
+                              <tr>
+                                 <td>Paint Tool SAI</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              In diesem Projekt geht es darum, einen Überblick verschaffen zu können, wann welches Spiel zu welchem Preis gekauft/ verkauft hat.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Statistik wann und für welche Plattformen die Spiele gekauft wurden</li>
+                                    <li>Statistik wie viel insgesamt für einen bestimmten Zeitraum gekauft wurde mit Durchschnittsausgaben (Jahres- und Monatsstatistik)</li>
+                                    <li>Plattform und Spiele-Management zum Hinzufügen, Bearbeiten und Löschen von Spieleplattformen und Spiele</li>
+                                    <li>Suchfunktion um schnell ein Titel auffinden zu können</li>
+                                    <li>Dateiverwaltung um Bilddateien abzuspeichern oder zu verändern (optional löschen)</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>02/2013 - 03/2013: Projekt - Amazon-Shopping-Verknüpfung</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>gemeinnützige Organisation</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Für ein Webportal soll ein Amazon-Link via Partnerprogramm generiert werden, dass zum Produkt für das in einem Blog geschriebenen Beitrags leiten soll.
+                              Hierbei handelt es sich überwiegend um Software (Spiele) oder manchmal auch Hardware.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>GUI: Web via XHTML</li>
+                              <li>Product Advertising API eingebaut und für die Bedürfnisse entsprechend zugeschnitten</li>
+                              <li>Grundstruktur erweitert, um ein oder mehrere Angebote (derzeit max. drei) von Amazon einsehen zu können, die zum Thema des Blog-Beitrages passen</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>10/2013 - 02/2014: Projekt - Erweiterung eines Forums im Backend-Bereich</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>private Organisation</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Ein Forum soll um die Funktionen Hinzufügen, Bearbeiten und Löschen von Dateien erweitert werden.
+                              Dabei müssen desweiteren Rechte erweitert und ergänzt werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML</li>
+                              <li>Aufbau von Funktionen zum Hinzufügen/ Bearbeiten/ Löschen bestimmter Dateien</li>
+                              <li>Datenbank erweitert um Berechtigungen, wer Daten hinzufügen/ ändern darf</li>
+                              <li>Genaue Details bezüglich des Vorgehens soll im Log gespeichert werden (Wer hat was wann gemacht und warum)</li>
+                              <li>Funktion dem "Mainscript" hinzugefügt</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>05/2014 - 06/2014: Projekt - Preisvergleich (Mobil)</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privatperson</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Dreamweaver</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2">Weitere Software/ Tools:</td>
+                                 <td>DB Designer 4</td>
+                              </tr>
+                              <tr>
+                                 <td>Paint Tool SAI</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Es soll eine Umgebung geschaffen werden, mit der man ganz einfach Wunschprodukte hinzufügt und diese dann mit verschiedenen Geschäften, aus diese frei auszufählen gilt, die Preise vergleicht.
+                              Diese soll auf einem mobilen Endgerät ausgegeben werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>JQuery verwendet um für mobile Geräte geeignet darstellen zu können</li>
+                                    <li>Start soll immer das günstigste Produkt aus der Wunschliste angezeigt werden</li>
+                                    <li>Es soll jederzeit möglich sein, ein Zielgeschäft hinzufügen zu können</li>
+                                    <li>Backend prüft regelmäßig, welches Produkt am günstigsten ist und sortiert diese entsprechend</li>
+                                    <li>Übersicht auf alle gewünschten Produkte und Geschäfte (Favoritenlisten)</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>06/2018 - 07/2018: Projekt - AJAX-Loader zur Erweiterung der Inhalte für Seminare</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Kunde von Universe eMedia GmbH</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>PHP Storm</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Das Laden aller Seminare nimmt zu viel Zeit in Anspruch.
+                              Die Performance soll verbessert werden, indem nur einige wenige Seminare und nach Bedarf weitere geladen werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP/ Drupal 7</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Überblick der Seminare optimiert</li>
+                                    <li>Es sollen immer bis zu 15 Seminare geladen werden, mit Hilfe von AJAX</li>
+                                    <li>Fehlende Indizes von Datenbank-Tabellen ergänzt, bei der schon hier eine erhebnliche Performance-Verbesserung erreicht werden konnte</li>
+                                    <li>Seminardarstellung auch für Pakete vereinheitlicht</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>06/2018 - 07/2018: Projekt - Übersicht von Veranstaltungen inkl. Verwaltung</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Kunde von Universe eMedia GmbH</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>PHP Storm</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Veranstaltungen sollen künftig vom Kunden selbst angelegt und verwaltet werden können.
+                              Sie soll auch im Menüband erscheinen
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP/ Drupal 7</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Generierung Übersicht aller Veranstaltungen (sowohl Verwaltung als auch für die Kunden des Vertragspartners)</li>
+                                    <li>Veranstaltungen können als aktiv/inaktiv hinterlegt werden</li>
+                                    <li>Sortierung: Aktuelle zuerst, ältere zum Schluss</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>07/2018 - 09/2018: Projekt - Aufbau eines MIS</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>4</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Kunde von Universe eMedia GmbH</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>PHP Storm</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Ein neues Portal zur Verwaltung von Verträgen, Vertragspartnern, Kosten, Buchungen etc. soll aufgebaut werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: PHP/Drupal 7</li>
+                              <li>Datenbank: MySQL</li>
+                              <li>GUI: Web via XHTML
+                                 <ul>
+                                    <li>Aufbau Modul für persönliche Einstellungen</li>
+                                    <li>Automatische Summenbildung bei Anlage von Positionen</li>
+                                    <li>Handling von Session-Timeouts (min. 5, max 60, Standard 30 Minuten)</li>
+                                    <li>Verwaltung von Aktionen/Vertragsarten etc.</li>
+                                    <li>Optimierung Vertragsübersicht, Kontakte etc.</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+                  </div>
 
-                  <details>
-                     <summary>06/2011 - 06/2015: Projekt - Lesezeichen mit zugehöriger Verwaltung</summary>
+                  <div class="tab-pane fade" id="v-pills-web_asp" role="tabpanel" aria-labelledby="v-pills-web_asp-tab" tabindex="0">
+                     <details>
+                        <summary>06/2016 - 04/2017: Projekt - Tätigkeitserfassung zur Abrechnung der CallCenter-MA</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2">Weitere Software/ Tools:</td>
+                                 <td>DrawIO</td>
+                              </tr>
+                              <tr>
+                                 <td>Balsamic Moqup</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Es wird ein veraltetes System auf Basis von MS Access verwendet.
+                              Dieses Tool ist nicht mehr zeitgemäß und entspricht auch nicht mehr dem aktuellen Stand der Möglichkeiten.
+                              Die Nutzung ist nur von zentraler Stelle möglich, weshalb die Mitarbeiter ihre Stunden per "Papier" an eine zentrale Erfassung melden müssen.
+                              Dort werden dann die Stunden in das System eingetragen.
+                              Dies soll vereinfacht werden, indem die MA ihre Stunden nun direkt am Arbeitsplatz ins System eintragen können.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: Oracle</li>
+                              <li>GUI: Web via ASP.NET Web Forms</li>
+                              <li>Aufbau der Weboberflächen getrennt für Mitarbeiter und Supervisor</li>
+                              <li>Definition von Tätigkeiten mit Parametern, ob und wie diese vergütet werden</li>
+                              <li>Mitarbeiter:
+                                 <ul>
+                                    <li>Eintrag der Tätigkeiten mit Angabe der Uhrzeiten</li>
+                                    <li>Keine Zeitüberschneidungen bei Einträgen</li>
+                                    <li>Einträge können nur tagesaktuell bearbeitet werden</li>
+                                 </ul>
+                              </li>
+                              <li>Supervisor:
+                                 <ul>
+                                    <li>Prüfung der hinterlegten Zeiten mit entsprechender Freigabe zur Abrechnung</li>
+                                    <li>Hinterlegung von Löhnen (mehrere möglich)</li>
+                                    <li>Hinterlegung des Arbeitgebers (da auch hier Zeitarbeiter von Fremdfirmen beschäftigt werden)</li>
+                                    <li>Auswertungsmöglichkeiten (jeweils unter Angabe des Abrechnungszeitraumes der letzten 12 Monate oder selbst definierbarer Zeitraum)
+                                       <ul>
+                                          <li>Gesamtauswertung für Entgeltzahlungen für die Personalabteilung</li>
+                                          <li>Einzelauswertung mit Übersicht aller Tätigkeiten und Anwesenheitszeiten</li>
+                                          <li>Tätigkeitsauswertung für die Kunden</li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>12/2016 - 10/2017: Projekt - Referenzdaten Prüf-/ Pflegetool</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>3</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Da zzt. keine offiziellen (verlässlichen) Referenzdatenquellen vorhanden sind, besteht nicht die Möglichkeit einer automatisierten (Batch), verlässlichen Referenzdatenprüfung.
+                              Deshalb soll eine Möglichkeit zur regelmäßigen manuellen Prüfung und Pflege von Regerenzdaten mit Hilfe eines zu entwickelnden Online-Tools (Web-Anwendung für Intranet) geschaffen werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: Oracle</li>
+                              <li>GUI: Web via ASP.NET Web Forms</li>
+                              <li>Aufbau der Weboberfläche lt. Konzept</li>
+                              <li>Definition von Tätigkeiten mit Parametern, ob und wie diese vergütet werden</li>
+                              <li>Erstellung der Datenbankstruktur lt. Konzept</li>
+                              <li>Referenzeinträge werden alphabetisch aufsteigend zur Prüfung angezeigt</li>
+                              <li>Anzeige der betroffenen Datenbestände für den zu prüfenden Eintrag über mehrere Datenbanken</li>
+                              <li>Angabe von persönlicher Anreden für ausgewählte Einträge</li>
+                              <li>Programmierung der definierten Logik zur Überprüfung der Referenzdaten
+                                 <ul>
+                                    <li>Korrekt</li>
+                                    <li>Fehlerhaft</li>
+                                    <li>Andere Kategorie (mit Auswahl zu welcher Kategorie dieser Eintrag gehört)</li>
+                                    <li>Korrektur</li>
+                                 </ul>
+                              </li>
+                              <li>Freigaben erfolgen durch erfolgreich bestätigte Doppelprüfung (Prüfung durch 2. Instanz)</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>01/2017 - 09/2017: Projekt - Webtool zur Befüllung von Word-Templates</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Ausbildungsfirma</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>keine</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Im System werden regelmäßig Serienbriefe angelegt mit Textfeldern (unter Word "Textmarke" genannt).
+                              Diese müssen automatisiert dynamisch befüllt werden.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: keine</li>
+                              <li>GUI: Web via ASP.NET Web Forms</li>
+                              <li>Erstellung definierter Texte für bestimmte Zwecke</li>
+                              <li>Auswahlmöglichkeit, ob es sich um Zuwendungsbestätigung handelt oder allgemeiner Brief</li>
+                              <li>Speicherung der erstellten befüllten Dokumente jederzeit ermöglichen</li>
+                              <li>Prüfung auf doppelte Felder und fehlende Pflichtfelder im Dokument mit Hinweis</li>
+                              <li>Implementierung der definierten Logik zum Einpflegen der korrekten Inhalte</li>
+                           </ul>
+                        </div>
+                     </details>
+   
+                     <details>
+                        <summary>03/2016 - 05/2020: Projekt - Heimframework</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privatperson</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="3">Weitere Software/ Tools:</td>
+                                 <td>DrawIO</td>
+                              </tr>
+                              <tr>
+                                 <td>Umlet</td>
+                              </tr>
+                              <tr>
+                                 <td>Pencil Mockup-Tool</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Bei diesem Projekt handelt es sich um ein privates Projekt (anfangs zu Lehrzwecken für Ausbildung).
+                              Sie ist mit der Zeit sehr umfangreich geworden, sodass dies auch mit in diese Projektliste aufgenommen werden kann.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 4.0</li>
+                              <li>Datenbank: keine</li>
+                              <li>GUI: Web via ASP.NET Web Forms</li>
+                              <li>Aufbau Master-Weboberfläche</li>
+                              <li>Aufbau der Oberflächen für die verschiedenen Module (geschachtelte Master-Oberflächen)</li>
+                              <li>Jeden Modul kann via Gruppenrechte Zugang erhalten oder verweigern</li>
+                              <li>Registrierung ermöglichen, damit mehrere Benutzer die Funktionen verwenden können.</li>
+                              <li>Derzeit entwickelte Module:
+                                 <ul>
+                                    <li>Lesezeichen mit Verwaltung (an einem Benutzer gebunden)</li>
+                                    <li>Musikverwaltung (von allen mit entsprechender Gruppen-Berechtigung einsehbar, keine Benutzerbindung)</li>
+                                    <li>Galerie (von allen mit Gruppen-Berechtigungeinsehbar, keine Benutzerbindung)</li>
+                                    <li>Notizblock (an einem Benutzer gebunden)</li>
+                                    <li>Passwort-Tresor (an einem Benutzer gebunden)</li>
+                                    <li>Spiele (kleinere Browserspiele) (von allen einsehbar)</li>
+                                    <li>Terminverwaltung mit Kalenderdarstellung (an Benutzer gebunden)</li>
+                                    <li>Versendung von Privaten Nachrichten (an Benutzer gebunden)</li>
+                                    <li>Einstellungen für Seitendarstellungen und privaten Einstellungen (an Benutzer gebunden)</li>
+                                    <li>Rezepte für Speisen mit Option für mögliche Wochenplanung (von allen einsehbar)</li>
+                                    <li>Telefonbuch mit Option, ob die Nummern für alle einsehbar sein soll oder nur für einen selbst (je nach Einstellung, prio an einem Benutzer gebunden)</li>
+                                    <li>Administrative Verwaltung (nur Administratorengruppe)
+                                       <ul>
+                                          <li>Userverwaltung (sperren/ freigeben von User/Gruppenzuweisung)</li>
+                                          <li>Gruppenverwaltung (Erstellung/ Bearbeitung)</li>
+                                          <li>Linkverwaltung (Module mit automatischer Zuordnung von Rechten (verweigert ist Standard))</li>
+                                          <li>Rechteverwaltung (Welche Gruppe kann auf welches Modul zugreifen)</li>
+                                          <li>Globale Einstellungen</li>
+                                          <li>Ankündigungsmail versenden</li>
+                                          <li>Logging</li>
+                                          <li>Archiv (zur Prüfung von gelöschten Daten (Bilder/ Musik) mit absolute Löschung sowie Wiederherstellungsmöglichkeiten)</li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                     </details>
+                  </div>
 
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privatperson</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="2">Weitere Software/Tools:</td>
-                              <td>DBDesigner 4</td>
-                           </tr>
-                           <tr>
-                              <td>Paint.NET</td>
-                           </tr>
-                        </tbody>
-                     </table>
+                  <div class="tab-pane fade" id="v-pills-games" role="tabpanel" aria-labelledby="v-pills-games-tab" tabindex="0">
+                     <details>
+                        <summary>06/2011 - 09/2011: Projekt - Pseudo-Moorhuhn</summary>
+   
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>Privat</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Microsoft Visual Studio 2010</td>
+                              </tr>
+                              <tr>
+                                 <td>Weitere Software/ Tools:</td>
+                                 <td>Paint.NET</td>
+                              </tr>
+                           </tbody>
+                        </table>
+   
+                        <div class="description">
+                           <p>
+                              Als erste Einführung in die Spieleprogrammierung soll ein simples Geschicklichkeitsspiel erstellt werden.
+                              Die Basis dafür bietet sich hierfür Moorhuhn an.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: C#/ .NET 3.5</li>
+                              <li>Datenbank: keine</li>
+                              <li>GUI: Windows Forms</li>
+                              <li>Das Ziel bewegt sich zufällig auf einem anderen Punkt des Spielfeldes, ohne Animation</li>
+                              <li>Ab einer bestimmten Anzahl von Treffern soll die Geschwindigkeit des Huhns steigern</li>
+                              <li>Drei fest definierte Schwierigkeitsgrade</li>
+                              <li>Punktzahl und Trefferquote soll nach Ende des Spiels errechnet werden</li>
+                              <li>Das Huhn kann jederzeit durch ein anderes Bild in derselben Größe ersetzt werden</li>
+                              <li>Eigenes Bild bekommt bei erfolgreichem Treffer eine eigene kleine "Animation"</li>
+                              <li>Hindernisse können jederzeit hinzugefügt werden, sie erscheinen zufällig auf dem Spielfeld</li>
+                              <li>Hindernisse können nicht zerstört werden und es ist nicht möglich hindurch zu schießen</li>
+                              <li>Hintergrund kann jederzeit beliebig geändert werden</li>
+                           </ul>
+                        </div>
+                     </details>
+                     
+                     <details>
+                        <summary>demnächst: Projekt - Wild Survivors</summary>
 
-                     <div class="description">
-                        <p>
-                           In diesem Projekt geht es darum ein Lesezeichensystem direkt auf die Startseite eines beliebigen Browsers zu generieren.
-                           Dabei sollen Ordnerstrukturen und Links, sowie die Navigation vereinfacht dargestellt werden.
-                           W3C wird hier zurzeit noch nicht beachtet, ändert sich, sobald alle Funktionen nahezu sehr gut funktionieren und es in der Darstellung keine Mängel gibt.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Top-Navigation zum Switchen der Lesezeichendarstellung/Oberflächendesign/Lesezeichenverwaltung</li>
-                                 <li>Navigation der Ordner und Lesezeichen mit einem Roll-Over-Effekt</li>
-                                 <li>Persönliches Design, jedoch nur mit Farben möglich (keine Hintergrundbilder), Farbauswahl ermöglicht mit JavaScript</li>
-                              </ul>
-                           </li>
-                           <li>Ordnerstruktur bis zu vier Ebenen möglich</li>
-                           <li>Funktionen zur Überprüfung, ob es sich um ein Lesezeichen- oder Ordner-Element handelt</li>
-                           <li>Prüfung ob sich Links im Ordner befinden um ein Löschen zu ermöglichen oder nicht</li>
-                           <li>Hilfemenü kann nur vom Administrator erweitert werden</li>
-                        </ul>
-                     </div>
-                  </details>
+                        <table class="table table-hover table-dark table-sm">
+                           <tbody>
+                              <tr>
+                                 <td>Anzahl Entwickler:</td>
+                                 <td>geplant sind 1</td>
+                              </tr>
+                              <tr>
+                                 <td>Kunde:</td>
+                                 <td>für mich</td>
+                              </tr>
+                              <tr>
+                                 <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<b>Integrated Development Environment</b>, <i>Deutsch: Entwicklungsumgebung</i>">IDE</a>:</td>
+                                 <td>Unity</td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="2">Weitere Software/ Tools:</td>
+                                 <td>Microsoft Visual Studio 2022</td>
+                              </tr>
+                              <tr>
+                                 <td>Unity Asset Store</td>
+                              </tr>
+                           </tbody>
+                        </table>
 
-                  <details>
-                     <summary>01/2012 - 05/2012: Projekt - Erstellung einer neuen Webseite</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>2</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>gemeinnützige Organisation</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="3">Weitere Software/Tools:</td>
-                              <td>DBDesigner 4</td>
-                           </tr>
-                           <tr>
-                              <td>Filezilla</td>
-                           </tr>
-                           <tr>
-                              <td>Paint Tool SAI</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Komplettüberarbeitung der vorhandenen Weboberfläche in eine neue "frischere" Darstellung sowie neuen Funktionen.
-                           Dabei soll von den rein statisch aufgebauten Seiten in eine dynamische Oberfläche gewandelt werden, um Eingaben und Daten vereinfacht zu hinterlegen, weil sonst immer direkt im Script gearbeitet werden muss.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Aufbau einer neuen Container-Struktur, weg von der Tabellen-Struktur</li>
-                                 <li>Aufbau eines Gästebuchs mit einer einfachen Spam-Schutzmaßnahme (Captcha)</li>
-                                 <li>Administrative Verwaltung für Mitarbeiter</li>
-                                 <li>Notizblock, um Daten und Informationen für andere Mitarbeiter zu hinterlassen</li>
-                                 <li>Generierung von Kunden- und Administrationskonten</li>
-                                 <li>Einbau eines Terminkalenders mit Kalenderdarstellung</li>
-                              </ul>
-                           </li>
-                           <li>Funktionen zum Sperren eines Benutzers auf Basis von E-mail und/oder IP-Adresse</li>
-                           <li>Funktion zum Versenden und Abrufen von E-Mails eingebaut (ist jedoch ausbaufähig)</li>
-                           <li>Kundensupport</li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>12/2012 - 02/2013: Projekt - Gameverwaltung</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privatperson</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="2">Weitere Software/Tools:</td>
-                              <td>DBDesigner 4</td>
-                           </tr>
-                           <tr>
-                              <td>Paint Tool SAI</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           In diesem Projekt geht es darum, einen Überblick verschaffen zu können, wann welches Spiel zu welchem Preis gekauft/verkauft hat.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Statistik wann und für welche Plattformen die Spiele gekauft wurden</li>
-                                 <li>Statistik wie viel insgesamt für einen bestimmten Zeitraum gekauft wurde mit Durchschnittsausgaben (Jahres- und Monatsstatistik)</li>
-                                 <li>Plattform und Spiele-Management zum Hinzufügen, Bearbeiten und Löschen von Spieleplattformen und Spiele</li>
-                                 <li>Suchfunktion um schnell ein Titel auffinden zu können</li>
-                                 <li>Dateiverwaltung um Bilddateien abzuspeichern oder zu verändern (optional löschen)</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>02/2013 - 03/2013: Projekt - Amazon-Shopping-Verknüpfung</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>gemeinnützige Organisation</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Für ein Webportal soll ein Amazon-Link via Partnerprogramm generiert werden, dass zum Produkt für das in einem Blog geschriebenen Beitrags leiten soll.
-                           Hierbei handelt es sich überwiegend um Software (Spiele) oder manchmal auch Hardware.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>GUI: Web via XHTML</li>
-                           <li>Product Advertising API eingebaut und für die Bedürfnisse entsprechend zugeschnitten</li>
-                           <li>Grundstruktur erweitert, um ein oder mehrere Angebote (derzeit max. drei) von Amazon einsehen zu können, die zum Thema des Blog-Beitrages passen</li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>10/2013 - 02/2014: Projekt - Erweiterung eines Forums im Backend-Bereich</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>private Organisation</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Ein Forum soll um die Funktionen Hinzufügen, Bearbeiten und Löschen von Dateien erweitert werden.
-                           Dabei müssen desweiteren Rechte erweitert und ergänzt werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML</li>
-                           <li>Aufbau von Funktionen zum Hinzufügen/Bearbeiten/Löschen bestimmter Dateien</li>
-                           <li>Datenbank erweitert um Berechtigungen, wer Daten hinzufügen/ändern darf</li>
-                           <li>Genaue Details bezüglich des Vorgehens soll im Log gespeichert werden (Wer hat was wann gemacht und warum)</li>
-                           <li>Funktion dem "Mainscript" hinzugefügt</li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>05/2014 - 06/2014: Projekt - Preisvergleich (Mobil)</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privatperson</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Dreamweaver</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="2">Weitere Software/Tools:</td>
-                              <td>DB Designer 4</td>
-                           </tr>
-                           <tr>
-                              <td>Paint Tool SAI</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Es soll eine Umgebung geschaffen werden, mit der man ganz einfach Wunschprodukte hinzufügt und diese dann mit verschiedenen Geschäften, aus diese frei auszufählen gilt, die Preise vergleicht.
-                           Diese soll auf einem mobilen Endgerät ausgegeben werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>JQuery verwendet um für mobile Geräte geeignet darstellen zu können</li>
-                                 <li>Start soll immer das günstigste Produkt aus der Wunschliste angezeigt werden</li>
-                                 <li>Es soll jederzeit möglich sein, ein Zielgeschäft hinzufügen zu können</li>
-                                 <li>Backend prüft regelmäßig, welches Produkt am günstigsten ist und sortiert diese entsprechend</li>
-                                 <li>Übersicht auf alle gewünschten Produkte und Geschäfte (Favoritenlisten)</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>06/2018 - 07/2018: Projekt - AJAX-Loader zur Contenterweiterung für Seminare</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>2</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Kunde von Universe eMedia GmbH</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>PHP Storm</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Das Laden aller Seminare nimmt zu viel Zeit in Anspruch.
-                           Die Performance soll verbessert werden, indem nur einige wenige Seminare und nach Bedarf weitere geladen werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP/Drupal 7</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Überblick der Seminare optimiert</li>
-                                 <li>Es sollen immer bis zu 15 Seminare geladen werden, mit Hilfe von AJAX</li>
-                                 <li>Fehlende Indizes von Datenbank-Tabellen ergänzt, bei der schon hier eine erhebnliche Performance-Verbesserung erreicht werden konnte</li>
-                                 <li>Seminardarstellung auch für Pakete vereinheitlicht</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>06/2018 - 07/2018: Projekt - Übersicht von Veranstaltungen inkl. Verwaltung</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Kunde von Universe eMedia GmbH</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>PHP Storm</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Veranstaltungen sollen künftig vom Kunden selbst angelegt und verwaltet werden können.
-                           Sie soll auch im Menüband erscheinen
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP/Drupal 7</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Generierung Übersicht aller Veranstaltungen (sowohl Verwaltung als auch für die Kunden des Vertragspartners)</li>
-                                 <li>Veranstaltungen können als aktiv/inaktiv hinterlegt werden</li>
-                                 <li>Sortierung: Aktuelle zuerst, ältere zum Schluss</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>07/2018 - 09/2018: Projekt - Aufbau eines MIS</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>4</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Kunde von Universe eMedia GmbH</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>PHP Storm</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Ein neues Portal zur Verwaltung von Verträgen, Vertragspartnern, Kosten, Buchungen etc. soll aufgebaut werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: PHP/Drupal 7</li>
-                           <li>Datenbank: MySQL</li>
-                           <li>GUI: Web via XHTML
-                              <ul>
-                                 <li>Aufbau Modul für persönliche Einstellungen</li>
-                                 <li>Automatische Summenbildung bei Anlage von Positionen</li>
-                                 <li>Handling von Session-Timeouts (min. 5, max 60, Standard 30 Minuten)</li>
-                                 <li>Verwaltung von Aktionen/Vertragsarten etc.</li>
-                                 <li>Optimierung Vertragsübersicht, Kontakte etc.</li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-               </div>
-
-               <div class="tab-pane fade" id="web_asp" role="tabpanel" aria-labelledby="web_asp-tab">
-                  
-                  <details>
-                     <summary>06/2016 - 04/2017: Projekt - Tätigkeitserfassung zur Abrechnung der CallCenter-MA</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>2</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="2">Weitere Software/Tools:</td>
-                              <td>DrawIO</td>
-                           </tr>
-                           <tr>
-                              <td>Balsamic Moqup</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Es wird ein veraltetes System auf Basis von MS Access verwendet.
-                           Dieses Tool ist nicht mehr zeitgemäß und entspricht auch nicht mehr dem aktuellen Stand der Möglichkeiten.
-                           Die Nutzung ist nur von zentraler Stelle möglich, weshalb die Mitarbeiter ihre Stunden per "Papier" an eine zentrale Erfassung melden müssen.
-                           Dort werden dann die Stunden in das System eingetragen.
-                           Dies soll vereinfacht werden, indem die MA ihre Stunden nun direkt am Arbeitsplatz ins System eintragen können.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: Oracle</li>
-                           <li>GUI: Web via ASP.NET Web Forms</li>
-                           <li>Aufbau der Weboberflächen getrennt für Mitarbeiter und Supervisor</li>
-                           <li>Definition von Tätigkeiten mit Parametern, ob und wie diese vergütet werden</li>
-                           <li>Mitarbeiter:
-                              <ul>
-                                 <li>Eintrag der Tätigkeiten mit Angabe der Uhrzeiten</li>
-                                 <li>Keine Zeitüberschneidungen bei Einträgen</li>
-                                 <li>Einträge können nur tagesaktuell bearbeitet werden</li>
-                              </ul>
-                           </li>
-                           <li>Supervisor:
-                              <ul>
-                                 <li>Prüfung der hinterlegten Zeiten mit entsprechender Freigabe zur Abrechnung</li>
-                                 <li>Hinterlegung von Löhnen (mehrere möglich)</li>
-                                 <li>Hinterlegung des Arbeitgebers (da auch hier Zeitarbeiter von Fremdfirmen beschäftigt werden)</li>
-                                 <li>Auswertungsmöglichkeiten (jeweils unter Angabe des Abrechnungszeitraumes der letzten 12 Monate oder selbst definierbarer Zeitraum)
-                                    <ul>
-                                       <li>Gesamtauswertung für Entgeltzahlungen für die Personalabteilung</li>
-                                       <li>Einzelauswertung mit Übersicht aller Tätigkeiten und Anwesenheitszeiten</li>
-                                       <li>Tätigkeitsauswertung für die Kunden</li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>12/2016 - 10/2017: Projekt - Referenzdaten Prüf-/Pflegetool</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>3</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Da zzt. keine offiziellen (verlässlichen) Referenzdatenquellen vorhanden sind, besteht nicht die Möglichkeit einer automatisierten (Batch), verlässlichen Referenzdatenprüfung.
-                           Deshalb soll eine Möglichkeit zur regelmäßigen manuellen Prüfung und Pflege von Regerenzdaten mit Hilfe eines zu entwickelnden Online-Tools (Web-Anwendung für Intranet) geschaffen werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: Oracle</li>
-                           <li>GUI: Web via ASP.NET Web Forms</li>
-                           <li>Aufbau der Weboberfläche lt. Konzept</li>
-                           <li>Definition von Tätigkeiten mit Parametern, ob und wie diese vergütet werden</li>
-                           <li>Erstellung der Datenbankstruktur lt. Konzept</li>
-                           <li>Referenzeinträge werden alphabetisch aufsteigend zur Prüfung angezeigt</li>
-                           <li>Anzeige der betroffenen Datenbestände für den zu prüfenden Eintrag über mehrere Datenbanken</li>
-                           <li>Angabe von persönlicher Anreden für ausgewählte Einträge</li>
-                           <li>Programmierung der definierten Logik zur Überprüfung der Referenzdaten
-                              <ul>
-                                 <li>Korrekt</li>
-                                 <li>Fehlerhaft</li>
-                                 <li>Andere Kategorie (mit Auswahl zu welcher Kategorie dieser Eintrag gehört)</li>
-                                 <li>Korrektur</li>
-                              </ul>
-                           </li>
-                           <li>Freigaben erfolgen durch erfolgreich bestätigte Doppelprüfung (Prüfung durch 2. Instanz)</li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>01/2017 - 09/2017: Projekt - Webtool zur Befüllung von Word-Templates</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Ausbildungsfirma</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>keine</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Im System werden regelmäßig Serienbriefe angelegt mit Textfeldern (unter Word "Textmarke" genannt).
-                           Diese müssen automatisiert dynamisch befüllt werden.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: keine</li>
-                           <li>GUI: Web via ASP.NET Web Forms</li>
-                           <li>Erstellung definierter Texte für bestimmte Zwecke</li>
-                           <li>Auswahlmöglichkeit, ob es sich um Zuwendungsbestätigung handelt oder allgemeiner Brief</li>
-                           <li>Speicherung der erstellten befüllten Dokumente jederzeit ermöglichen</li>
-                           <li>Prüfung auf doppelte Felder und fehlende Pflichtfelder im Dokument mit Hinweis</li>
-                           <li>Implementierung der definierten Logik zum Einpflegen der korrekten Inhalte</li>
-                        </ul>
-                     </div>
-                  </details>
-
-                  <details>
-                     <summary>03/2016 - 05/2020: Projekt - Heimframework</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privatperson</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td rowspan="3">Weitere Software/Tools:</td>
-                              <td>DrawIO</td>
-                           </tr>
-                           <tr>
-                              <td>Umlet</td>
-                           </tr>
-                           <tr>
-                              <td>Pencil Mockup-Tool</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Bei diesem Projekt handelt es sich um ein privates Projekt (anfangs zu Lehrzwecken für Ausbildung).
-                           Sie ist mit der Zeit sehr umfangreich geworden, sodass dies auch mit in diese Projektliste aufgenommen werden kann.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 4.0</li>
-                           <li>Datenbank: keine</li>
-                           <li>GUI: Web via ASP.NET Web Forms</li>
-                           <li>Aufbau Master-Weboberfläche</li>
-                           <li>Aufbau der Oberflächen für die verschiedenen Module (geschachtelte Master-Oberflächen)</li>
-                           <li>Jeden Modul kann via Gruppenrechte Zugang erhalten oder verweigern</li>
-                           <li>Registrierung ermöglichen, damit mehrere Benutzer die Funktionen verwenden können.</li>
-                           <li>Derzeit entwickelte Module:
-                              <ul>
-                                 <li>Lesezeichen mit Verwaltung (an einem Benutzer gebunden)</li>
-                                 <li>Musikverwaltung (von allen mit entsprechender Gruppen-Berechtigung einsehbar, keine Benutzerbindung)</li>
-                                 <li>Galerie (von allen mit Gruppen-Berechtigungeinsehbar, keine Benutzerbindung)</li>
-                                 <li>Notizblock (an einem Benutzer gebunden)</li>
-                                 <li>Passwort-Tresor (an einem Benutzer gebunden)</li>
-                                 <li>Spiele (kleinere Browserspiele) (von allen einsehbar)</li>
-                                 <li>Terminverwaltung mit Kalenderdarstellung (an Benutzer gebunden)</li>
-                                 <li>Versendung von Privaten Nachrichten (an Benutzer gebunden)</li>
-                                 <li>Einstellungen für Seitendarstellungen und privaten Einstellungen (an Benutzer gebunden)</li>
-                                 <li>Rezepte für Speisen mit Option für mögliche Wochenplanung (von allen einsehbar)</li>
-                                 <li>Telefonbuch mit Option, ob die Nummern für alle einsehbar sein soll oder nur für einen selbst (je nach Einstellung, prio an einem Benutzer gebunden)</li>
-                                 <li>Administrative Verwaltung (nur Administratorengruppe)
-                                    <ul>
-                                       <li>Userverwaltung (sperren/freigeben von User/Gruppenzuweisung)</li>
-                                       <li>Gruppenverwaltung (Erstellung/Bearbeitung)</li>
-                                       <li>Linkverwaltung (Module mit automatischer Zuordnung von Rechten (verweigert ist Standard))</li>
-                                       <li>Rechteverwaltung (Welche Gruppe kann auf welches Modul zugreifen)</li>
-                                       <li>Globale Einstellungen</li>
-                                       <li>Ankündigungsmail versenden</li>
-                                       <li>Logging</li>
-                                       <li>Archiv (zur Prüfung von gelöschten Daten (Bilder/Musik) mit absolute Löschung sowie Wiederherstellungsmöglichkeiten)</li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </details>
-                  
-               </div>
-
-               <div class="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
-                  
-                  <details>
-                     <summary>06/2011 - 09/2011: Projekt - Pseudo-Moorhuhn</summary>
-
-                     <table class="table table-hover table-dark table-sm">
-                        <tbody>
-                           <tr>
-                              <td>Anzahl Entwickler:</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>Kunde:</td>
-                              <td>Privat</td>
-                           </tr>
-                           <tr>
-                              <td>Entwicklungsumgebung:</td>
-                              <td>Microsoft Visual Studio 2010</td>
-                           </tr>
-                           <tr>
-                              <td>Weitere Software/Tools:</td>
-                              <td>Paint.NET</td>
-                           </tr>
-                        </tbody>
-                     </table>
-
-                     <div class="description">
-                        <p>
-                           Als erste Einführung in die Spieleprogrammierung soll ein simples Geschicklichkeitsspiel erstellt werden.
-                           Die Basis dafür bietet sich hierfür Moorhuhn an.
-                        </p>
-                        <p class="titel">Aufgaben/Tätigkeiten:</p>
-                        <ul>
-                           <li>Programmiersprachen: C#/.NET 3.5</li>
-                           <li>Datenbank: keine</li>
-                           <li>GUI: Windows Forms</li>
-                           <li>Das Ziel bewegt sich zufällig auf einem anderen Punkt des Spielfeldes, ohne Animation</li>
-                           <li>Ab einer bestimmten Anzahl von Treffern soll die Geschwindigkeit des Huhns steigern</li>
-                           <li>Drei fest definierte Schwierigkeitsgrade</li>
-                           <li>Punktzahl und Trefferquote soll nach Ende des Spiels errechnet werden</li>
-                           <li>Das Huhn kann jederzeit durch ein anderes Bild in derselben Größe ersetzt werden</li>
-                           <li>Eigenes Bild bekommt bei erfolgreichem Treffer eine eigene kleine "Animation"</li>
-                           <li>Hindernisse können jederzeit hinzugefügt werden, sie erscheinen zufällig auf dem Spielfeld</li>
-                           <li>Hindernisse können nicht zerstört werden und es ist nicht möglich hindurch zu schießen</li>
-                           <li>Hintergrund kann jederzeit beliebig geändert werden</li>
-                        </ul>
-                     </div>
-                  </details>
-                  
+                        <div class="description">
+                           <p>
+                              Ich plane mein erstes Spiel in 3D mit Hilfe der Unity-Engine zu entwickeln.
+                              Inspiriert ist das Spiel von "Tokyo Jungle" welches für die PS3/ PSVita herauskam und am 7. Juni 2012 veröffentlicht wurde.
+                              Es handelt sich hier um ein Survival Adventure Game.
+                           </p>
+                           <p class="titel">Aufgaben/ Tätigkeiten:</p>
+                           <ul>
+                              <li>Programmiersprachen: Unity + C#</li>
+                              <li>Datenbank: noch keine</li>
+                              <li>GUI: Unity 3D Gamescreen</li>
+                              <li>weiteres ergibt sich...</li>
+                           </ul>
+                        </div>
+                     </details>
+                  </div>
                </div>
             </div>
 
@@ -1147,5 +1175,9 @@
       </div>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+      <script>
+         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      </script>
    </body>
 </html>
