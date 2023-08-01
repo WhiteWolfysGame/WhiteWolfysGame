@@ -16,9 +16,15 @@ function scrollFunction() {
 }
 
 function YoutubePlaylistFrame(playlistId, width = 560, height = 315){
-   return '<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/videoseries?list=' + playlistId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+   let html = '<div class="ratio ratio-16x9">';
+   html += '   <iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/videoseries?list=' + playlistId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+   html += '</div>';
+   return html;
 }
 
 function YoutubeFrame(videoId, width = 560, height = 315){
-   return '<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+   let html = '<div class="ratio ratio-16x9">';
+   html += '   <iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+   html += '</div>';
+   return html;
 }
