@@ -21,6 +21,10 @@ nav a:hover{
 	background-color: darkgrey;
 }
 
+.imageLink {
+	text-decoration: none;
+}
+
 nav li .dropdown-item{
 	color: black;
 }
