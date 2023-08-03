@@ -10,7 +10,7 @@ class Navigation{
       this.AddPage("Hobbies", "#", "Wolf", "wolf.html", true);
       this.AddPage("Hobbies", "#", "---");
       this.AddPage("Hobbies", "#", "YouTube", "youtube.html", true);
-      this.AddPage("Hobbies", "#", "Twitch", "twitch.html", false);
+      this.AddPage("Hobbies", "#", "Twitch", "twitch.html", true);
    }
 
    AddPage(pagename, url, subpagename, subpageurl, enabled){
