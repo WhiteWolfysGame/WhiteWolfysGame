@@ -88,6 +88,10 @@ hr + div{
 	margin-top: 50px;
 }
 
+footer{
+	padding: 40px 0px 25px 0px;
+}
+
 #back_to_top{
 	position: fixed;
 	bottom: 20px;
