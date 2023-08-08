@@ -144,3 +144,15 @@ footer{
  .navbar-toggler:focus{
 	border-color: white;
  }
+
+ .jsListNavigation {
+	color: var(--bs-nav-pills-link-active-color);
+ }
+ .jsListNavigation:hover {
+	color: var(--bs-nav-pills-link-active-color);
+	background-color: #8a2f6581;
+ }
+
+ .nav-pills .nav-link.active{
+	background-color: #8a2f65;
+ }
