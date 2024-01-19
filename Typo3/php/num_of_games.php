@@ -14,6 +14,7 @@ $numbers = $administration->GetNumberOfGames();
       <div class="card-text">Anzahl Games: <?=$numbers['games']?></div>
       <div class="card-text">davon Collections: <?=$numbers['collections']?></div>
       <div class="card-text">Games in Collections: <?=$numbers['games_in_collections']?></div>
+      <div class="card-text">Digital Games: <?=$numbers['digital_games']?></div>
       <div class="card-text">Gesamtanzahl Games: <?=$numbers['sum']?></div>
     </div>
   </div>

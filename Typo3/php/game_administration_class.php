@@ -410,6 +410,10 @@ class YoutubeLetsPlay{
       return $gamesToShow;
    }
 
+   function GetLetsPlayList(){
+      return $this->letsplayed;
+   }
+
    function GetNumPages(){
       $numGames = count($this->letsplayed);
       $pages = $numGames / $this->result_limit;
@@ -613,6 +617,7 @@ class GameAdministration{
 
       $countCollections = 0;
       $countGamesInCollections = 0;
+      $countDigitals = 0;
       for($i = 0; $i < count($this->games); $i++){
          if($this->games[$i]->is_collection == 1){
             $countCollections++;
@@ -621,11 +626,17 @@ class GameAdministration{
          if($this->games[$i]->is_collection > 0 && isset($this->games[$i]->game_collection)){
             $countGamesInCollections += count($this->games[$i]->game_collection);
          }
+
+         if($this->games[$i]->is_digital == 1){
+            $countDigitals++;
+         }
       }
 
       $numOfGames['collections'] = $countCollections;
       $numOfGames['games_in_collections'] = $countGamesInCollections;
-      $numOfGames['sum'] = $numOfGames['games'] - $numOfGames['collections'] + $numOfGames['games_in_collections'];
+      $numOfGames['digital_games'] = $countDigitals;
+
+      $numOfGames['sum'] = $numOfGames['games'] - $numOfGames['collections'] + $numOfGames['games_in_collections'] + $numOfGames['digital_games'];
 
       //$this->debug($numOfGames['collections']);
 
