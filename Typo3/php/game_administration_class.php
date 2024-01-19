@@ -182,6 +182,7 @@ class Game{
    public $game_collection;
    public $genres;
    public $is_collection;
+   public $is_digital;
    
    private $conn;
    private $plattformList;
@@ -212,7 +213,7 @@ class Game{
          $this->db = Database::getInstance()->getConnection();
       }
 
-      $sql = "SELECT id, title, platform_id, released, purchased, price, is_collection ";
+      $sql = "SELECT id, title, platform_id, released, purchased, price, is_collection, is_digital ";
       $sql .= "FROM Game ";
       $sql .= "ORDER BY title ASC";
       
@@ -237,6 +238,7 @@ class Game{
             $game->purchase_date = ($row["purchased"] == "0000-00-00") ? null : $row["purchased"];
             $game->price = $row["price"];
             $game->is_collection = $row["is_collection"];
+            $game->is_digital = $row["is_digital"];
 
             if($row["is_collection"] != 0){
                $sqlCollection = "SELECT id, title, origin_plattform, origin_release, game_id FROM GameCollection WHERE game_id = " . $row["id"];
@@ -272,7 +274,7 @@ class Game{
       return $games;
    }
 
-   function AddGame($title, $plattform_id, $release, $purchased, $price, $genres, $is_collection){
+   function AddGame($title, $plattform_id, $release, $purchased, $price, $genres, $is_collection, $is_digital){
       // Überprüfen, ob die Verbindung gültig ist
       if (!mysqli_ping($this->db)) {
          // Wenn die Verbindung nicht aktiv ist, Verbindung wiederherstellen
@@ -290,14 +292,15 @@ class Game{
          mysqli_stmt_close($stmt);
 
          if(mysqli_num_rows($result) == 0){
-            $sql = "INSERT INTO Game (title, platform_id, released, purchased, price, is_collection) ";
-            $sql .= "VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO Game (title, platform_id, released, purchased, price, is_collection, is_digital) ";
+            $sql .= "VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($this->db, $sql);
 
             if ($stmt) {
                $collection = ($is_collection == "on") ? 1 : 0;
-               mysqli_stmt_bind_param($stmt, "sissdi", 
-                  $title, $plattform_id, $release, $purchased, $price, $collection);
+               $digital = ($is_digital == "on") ? 1 : 0;
+               mysqli_stmt_bind_param($stmt, "sissdii", 
+                  $title, $plattform_id, $release, $purchased, $price, $collection, $digital);
 
                if (mysqli_stmt_execute($stmt)) {
                   // Die neue ID des eingefügten Datensatzes
@@ -331,6 +334,103 @@ class Game{
       print_r($data);
       echo "</pre>";
    }
+}
+
+class YoutubeLetsPlay{
+   private $db;   
+   private $letsplayed;
+   private $result_limit = 10;
+
+   function __construct(){
+      $this->db = Database::getInstance()->getConnection();
+
+      $this->LoadData();
+   }
+
+   function LoadData(){
+      if (!mysqli_ping($this->db)) {
+         // Wenn die Verbindung nicht aktiv ist, Verbindung wiederherstellen
+         $this->db = Database::getInstance()->getConnection();
+      }
+
+      $game = new Game();
+      $gamesList = $game->GetGamesList();
+
+      $collection = new GameCollection();
+      $collectionList = $collection->GetCollectionList();
+
+      $sql = "SELECT id, game_id, game_collection_id, playlist_url, lp_started, lp_ended FROM YoutubeLetsPlay ORDER BY lp_started DESC;";
+      $result = mysqli_query($this->db, $sql);
+
+      while($letsPlayRow = mysqli_fetch_assoc($result)){
+         //$this->debug($letsPlayRow);
+
+         $lpData = new YoutubeLetsPlayData();
+         $lpData->id = $letsPlayRow['id'];
+
+         foreach($gamesList as $theGame){
+            if($theGame->id === $letsPlayRow['game_id']){
+               $lpData->game = $theGame;
+               break;
+            }
+         }
+
+         if($lpData->game->is_collection){
+            foreach($collectionList as $theCollection){
+               if($theCollection->id === $letsPlayRow['game_collection_id']){
+                  //$this->debug($theCollection);
+                  $lpData->collection = $theCollection;
+                  break;
+               }
+            }
+         }
+         $lpData->playlistUrl = $letsPlayRow['playlist_url'];
+         $lpData->started = $letsPlayRow['lp_started'];
+         $lpData->ended = $letsPlayRow['lp_ended'];
+
+         $this->letsplayed[] = $lpData;
+      }
+
+      //$this->debug($this->letsplayed);
+   }
+
+   function GetLetsPlayed($page){
+
+      $startingIndex = $page * $this->result_limit;
+      $gamesToShow;
+
+      $counter = 0;
+
+      for($i = $startingIndex; $i < count($this->letsplayed); $i++){
+         $gamesToShow[] = $this->letsplayed[$i];
+         $counter++;
+         if($counter >= $this->result_limit) break;
+      }
+
+      return $gamesToShow;
+   }
+
+   function GetNumPages(){
+      $numGames = count($this->letsplayed);
+      $pages = $numGames / $this->result_limit;
+      // Immer aufrunden, wenn Nachkommastelle existiert
+      return ceil($pages);
+   }
+
+   private function debug($data){
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+   }
+}
+
+class YoutubeLetsPlayData{
+   public $id;
+   public $game;
+   public $collection;
+   public $playlistUrl;
+   public $started;
+   public $ended;
 }
 
 class GameCollection{

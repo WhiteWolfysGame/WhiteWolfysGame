@@ -1,9 +1,13 @@
 <?php
 require 'game_administration_class.php';
 
-$administration = new GameAdministration();
+//$administration = new GameAdministration();
 $currentPage = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
-$games = $administration->GetGames($currentPage);
+//$games = $administration->GetGames($currentPage);
+
+$lp = new YoutubeLetsPlay();
+$games = $lp->GetLetsPlayed($currentPage);
+
 
 function toGermanDate($mysqlDate){
    $newDate = $mysqlDate;
@@ -13,84 +17,77 @@ function toGermanDate($mysqlDate){
    }
    return $newDate;
 }
-?>
 
-<div class="accordion">
-<?php
+function GetPlayedGametitle($g){
+   return ($g->game->is_collection) ? $g->collection->title : $g->game->title;
+}
+
 for($i = 0; $i < count($games); $i++){
    ?>
-   <div class="accordion-item">
-      <h2 id="heading-<?=$i?>" class="accordion-header">
-         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?=$i?>" aria-expanded="true" aria-controls="collapse<?=$i?>">
-            <?=$games[$i]->title?>
-            &nbsp; <span class="badge bg-secondary"><?=$games[$i]->plattform->short_desc?></span>
-            <?php
-            if($games[$i]->is_digital){
-               ?>
-               &nbsp; <span class="badge bg-secondary">Digital</span>
-               <?php
-            }
+
+   <div class="row d-none d-sm-flex">
+   
+      <div class="col-4">
+         <?=GetPlayedGametitle($games[$i])?>
+         <span class="badge bg-secondary"><?=$games[$i]->game->plattform->short_desc?></span>
+         <?php
+         if($games[$i]->game->is_digital){
             ?>
-         </button>
-      </h2>
-      <div id="collapse<?=$i?>" class="accordion-collapse collapse" aria-labelledby="heading-<?=$i?>" data-bs-parent="#accordionExample">
-         <div class="accordion-body">
-            <p>Plattform: <?=$games[$i]->plattform->description?></p>
-            <p>Release: <?=toGermanDate($games[$i]->release_date)?></p>
-            <p>Kaufdatum: <?=toGermanDate($games[$i]->purchase_date)?></p>
-            <p>
-               <?php
-               if($games[$i]->price == "0.00"){ echo "Kaufpreis: geschenkt oder unbekannt"; }
-               else { echo "Kaufpreis: " . str_replace(".", ",", $games[$i]->price) . " &euro;"; }
-               ?>
-            </p>
-            <p>Genres: 
-               <?php
-               for($g = 0; $g < count($games[$i]->genres); $g++){
-                  if($g > 0) echo ", ";
-                  echo $games[$i]->genres[$g]->description;
-               }
-               ?>
-            </p>
-            <p>
-               <?php
-               if($games[$i]->is_collection > 0 && isset($games[$i]->game_collection)){
-                  ?>
-                  Games in der Collection: 
-                  <div class="card-group gallery text-white">
+            <span class="badge bg-secondary">Digital</span>
+            <?php
+         }
+         ?>
+      </div>
+
+      <div class="col-2">
+         <a href="<?=$games[$i]->playlistUrl?>" target="_blank">Link zur Playlist</a>
+      </div>
+
+      <div class="col-3">
+         Gestartet am <?=toGermanDate($games[$i]->started)?>
+      </div>
+
+      <div class="col-3">
+         Beendet am <?=toGermanDate($games[$i]->ended)?>
+      </div>
+
+      <div class="col-12 d-lg-none"><br></div>
+
+   </div>
+
+   <div class="row d-sm-none">
+      <div class="col-12">
+         <div class="card-group gallery text-white">
+            <div class="card px-1 pb-1 above">
+               <div class="card-header">
+                  <?=GetPlayedGametitle($games[$i])?>
+                  <span class="badge bg-secondary"><?=$games[$i]->game->plattform->short_desc?></span>
                   <?php
-                  for($c = 0; $c < count($games[$i]->game_collection); $c++){
+                  if($games[$i]->game->is_digital){
                      ?>
-                     <div class="card px-1 pb-1 above">
-                        <div class="card-body">
-                           <div class="card-text">
-                              <p>Game: <?=$games[$i]->game_collection[$c]->title?></p>
-                              <p>Ursprungsplattform: <?=$games[$i]->game_collection[$c]->origin_plattform->description?></p>
-                              <p>Original-Release: <?=toGermanDate($games[$i]->game_collection[$c]->origin_release)?></p>
-                           </div>
-                        </div>
-                     </div>
+                     <span class="badge bg-secondary">Digital</span>
                      <?php
                   }
                   ?>
-                  </div>
-                  <?php
-               }
-               ?>
-            </p>
-            <!--<p>
-               wenn bereits lets played...
-                  dann nichts anzeigen
-               wenn noch nicht lets played...
-                  Add to Youtube Let's Play Wishlist (evtl Count++)
-            </p>-->
+               </div>
+               <div class="card-body">
+                  Gestartet am <?=toGermanDate($games[$i]->started)?><br>
+                  Beendet am <?=toGermanDate($games[$i]->ended)?>
+               </div>
+               <div class="card-footer">
+                  <a href="<?=$games[$i]->playlistUrl?>" target="_blank">Link zur Playlist</a>
+               </div>
+            </div>
          </div>
       </div>
    </div>
+
    <?php
 }
+
+
 ?>
-</div>
+
 <br />
 <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Pagination Buttongroup">
    <div class="btn-group me-2 btn-group-sm" role="group" aria-label="To First and/or Preview">
@@ -111,7 +108,7 @@ for($i = 0; $i < count($games); $i++){
 
    <div class="btn-group me-2 btn-group-sm" role="group" aria-label="The Pages">
       <?php
-         $pages = $administration->GetNumPages();
+         $pages = $lp->GetNumPages();
          $maxVisibleLinks = 1;
          $modMaxVisibleLinks = ceil($maxVisibleLinks / 2); // für definition der Pages bei aktuellem Link (links und rechts v. aktuellem page)
          $lastPageLinkId = $pages - $maxVisibleLinks;
@@ -227,6 +224,9 @@ for($i = 0; $i < count($games); $i++){
       ?>
    </div>
 </div>
+
+
+
 <br/>
 <?php
 /*

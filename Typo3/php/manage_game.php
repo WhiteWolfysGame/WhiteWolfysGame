@@ -61,9 +61,13 @@ if(isset($_GET['action'])){
                   });
                </script>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
                <input class="form-check-input" type="checkbox" name="is_collection" id="is_collection">
                <label class="form-check-label" for="is_collection">Ist eine Game-Collection</label>
+            </div>
+            <div class="col-md-6">
+               <input class="form-check-input" type="checkbox" name="is_digital" id="is_digital">
+               <label class="form-check-label" for="is_digital">Ist Digital erstanden</label>
             </div>
             <div class="col-md-12">
                <input class="btn btn-primary" type="submit" value="Hinzufügen">
@@ -77,9 +81,10 @@ if(isset($_GET['action'])){
       //print_r($_POST);
       //echo "</pre>";
       $col = isset($_POST['is_collection']) ? $_POST['is_collection'] : "";
+      $dig = isset($_POST['is_digital']) ? $_POST['is_digital'] : "";
       $result = $administration->AddGame($_POST['title'], $_POST['plattform'],
                   $_POST['release_date'], $_POST['purchase_date'],
-                  $_POST['purchase_price'], $_POST['genres'], $col);
+                  $_POST['purchase_price'], $_POST['genres'], $col, $dig);
       ?>
       <div class="callout callout-info">
          <?=$result?>
@@ -100,6 +105,7 @@ $game = $administration->GetGamesList();
       <th>Titel</th>
       <th>Plattform-ID</th>
       <th>Is Collection?</th>
+      <th>Is Digital?</th>
 
       <th>Genres</th>
 
@@ -115,6 +121,7 @@ $game = $administration->GetGamesList();
          <td><?=$game[$row]->title?></td>
          <td><?=$game[$row]->plattform->short_desc?></td>
          <td><?=$game[$row]->is_collection?></td>
+         <td><?=$game[$row]->is_digital?></td>
 
          <td>
             <?php
