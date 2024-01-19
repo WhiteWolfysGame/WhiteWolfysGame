@@ -414,6 +414,17 @@ class YoutubeLetsPlay{
       return $this->letsplayed;
    }
 
+   function GetActiveLetsPlays(){
+      $activeLP;
+      for($i = 0; $i < count($this->letsplayed); $i++){
+         if(!isset($this->letsplayed[$i]->ended)){
+            $activeLP[] = $this->letsplayed[$i];
+         }
+      }
+
+      return $activeLP;
+   }
+
    function GetNumPages(){
       $numGames = count($this->letsplayed);
       $pages = $numGames / $this->result_limit;
