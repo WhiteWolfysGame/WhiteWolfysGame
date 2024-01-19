@@ -48,7 +48,18 @@ for($i = 0; $i < count($games); $i++){
       </div>
 
       <div class="col-3">
-         Beendet am <?=toGermanDate($games[$i]->ended)?>
+         <?php
+         if(isset($games[$i]->ended)){
+            ?>
+            Beendet am <?=toGermanDate($games[$i]->ended)?>
+            <?php
+         }
+         else {
+            ?>
+            Let's Play aktiv
+            <?php
+         }
+         ?>
       </div>
 
       <div class="col-12 d-lg-none"><br></div>
@@ -72,7 +83,18 @@ for($i = 0; $i < count($games); $i++){
                </div>
                <div class="card-body">
                   Gestartet am <?=toGermanDate($games[$i]->started)?><br>
-                  Beendet am <?=toGermanDate($games[$i]->ended)?>
+                  <?php
+                  if(isset($games[$i]->ended)){
+                     ?>
+                     Beendet am <?=toGermanDate($games[$i]->ended)?>
+                     <?php
+                  }
+                  else {
+                     ?>
+                     Let's Play aktiv
+                     <?php
+                  }
+                  ?>
                </div>
                <div class="card-footer">
                   <a href="<?=$games[$i]->playlistUrl?>" target="_blank">Link zur Playlist</a>
