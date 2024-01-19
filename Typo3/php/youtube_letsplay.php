@@ -40,7 +40,7 @@ for($i = 0; $i < count($games); $i++){
       </div>
 
       <div class="col-2">
-         <a href="<?=$games[$i]->playlistUrl?>" target="_blank">Link zur Playlist</a>
+         <a href="<?=$games[$i]->playlistUrl?>" class="external-link" target="_blank">Link zur Playlist</a>
       </div>
 
       <div class="col-3">
@@ -97,7 +97,7 @@ for($i = 0; $i < count($games); $i++){
                   ?>
                </div>
                <div class="card-footer">
-                  <a href="<?=$games[$i]->playlistUrl?>" target="_blank">Link zur Playlist</a>
+                  <a href="<?=$games[$i]->playlistUrl?>" class="external-link" target="_blank">Link zur Playlist</a>
                </div>
             </div>
          </div>
