@@ -36,7 +36,7 @@ echo "</pre>";
           ?>
         </h6>
         <div class="card-text">
-          <a href="<?=$game->playlistUrl?>" target="_blank">Zur Playlist</a>
+          <a href="<?=$game->playlistUrl?>" class="external-link" target="_blank">Zur Playlist</a>
         </div>
       </div>
     </div>
