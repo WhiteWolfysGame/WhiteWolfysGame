@@ -96,7 +96,7 @@ for($i = 0; $i < count($games); $i++){
                                  <form id="form-game<?=$games[$i]->id?>-gameInCollection<?=$games[$i]->game_collection[$c]->id?>" method="post" action="">
                                     <input type="hidden" name="game_id" value="<?=$games[$i]->id?>" />
                                     <input type="hidden" name="gameInCollection_id" value="<?=$games[$i]->game_collection[$c]->id?>" />
-                                    <button class="btn btn-primary" type="submit">Let's Play Wunschliste hinzufügen</button>
+                                    <button class="btn btn-primary" type="submit">Dieses zur Let's Play Wunschliste hinzufügen</button>
                                  </form>
                               </p>
                            </div>
@@ -114,7 +114,18 @@ for($i = 0; $i < count($games); $i++){
                   <form id="form-fullgame<?=$i?>" method="post" action="">
                      <input type="hidden" name="game_id" value="<?=$games[$i]->id?>" />
                      <input type="hidden" name="game_is_collection" value="<?=$games[$i]->is_collection?>" />
-                     <button class="btn btn-primary" type="submit">Let's Play Wunschliste hinzufügen</button>
+                     <?php
+                     if($games[$i]->is_collection > 0 && isset($games[$i]->game_collection)){
+                        ?>
+                        <button class="btn btn-primary" type="submit">Sammlung zur Let's Play Wunschliste hinzufügen</button>
+                        <?php
+                     }
+                     else {
+                        ?>
+                        <button class="btn btn-primary" type="submit">Zur Let's Play Wunschliste hinzufügen</button>
+                        <?php
+                     }
+                     ?>
                   </form>
                </p>
             </p>
