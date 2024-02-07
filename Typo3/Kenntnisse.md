@@ -19,6 +19,7 @@
 - JavaScript
 - UML
 - JSON
+- GitHub Quellcode-Verwaltung
 - CMS
   - Drupal 7
   - Wordpress
