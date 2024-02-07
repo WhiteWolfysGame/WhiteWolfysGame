@@ -13,6 +13,30 @@ function toGermanDate($mysqlDate){
    }
    return $newDate;
 }
+
+if(isset($_POST)){
+   if(isset($_POST['game_id']) && isset($_POST['gameInCollection_id'])){
+      // Spezifisches Game (gameInCollection_id) innerhalb vom Game (game_id)
+      $result = $administration->VoteGame($_POST['game_id'], $_POST['gameInCollection_id']);
+      ?>
+      <div class="bs-callout bs-callout-info">
+         <?=$result?>
+      </div>
+      <?php
+      //echo "Hallo Spiel innerhalb einer Collection";
+   }
+   
+   if(isset($_POST['game_id']) && isset($_POST['game_is_collection'])){
+      // Gewähltes Game sowie alle Games innerhalb der Collection
+      $result = $administration->VoteGame($_POST['game_id']);
+      ?>
+      <div class="bs-callout bs-callout-info">
+         <?=$result?>
+      </div>
+      <?php
+      //echo "Hallo ausgewähltes Spiel";
+   }
+}
 ?>
 
 <div class="accordion">
@@ -67,6 +91,14 @@ for($i = 0; $i < count($games); $i++){
                               <p>Game: <?=$games[$i]->game_collection[$c]->title?></p>
                               <p>Ursprungsplattform: <?=$games[$i]->game_collection[$c]->origin_plattform->description?></p>
                               <p>Original-Release: <?=toGermanDate($games[$i]->game_collection[$c]->origin_release)?></p>
+                              <!-- Button für Wunschliste (Game in Collection) -->
+                              <p>
+                                 <form id="form-game<?=$games[$i]->id?>-gameInCollection<?=$games[$i]->game_collection[$c]->id?>" method="post" action="">
+                                    <input type="hidden" name="game_id" value="<?=$games[$i]->id?>" />
+                                    <input type="hidden" name="gameInCollection_id" value="<?=$games[$i]->game_collection[$c]->id?>" />
+                                    <button class="btn btn-primary" type="submit">Let's Play Wunschliste hinzufügen</button>
+                                 </form>
+                              </p>
                            </div>
                         </div>
                      </div>
@@ -77,6 +109,14 @@ for($i = 0; $i < count($games); $i++){
                   <?php
                }
                ?>
+               <!-- Button für Wunschliste (Game) -->
+               <p>
+                  <form id="form-fullgame<?=$i?>" method="post" action="">
+                     <input type="hidden" name="game_id" value="<?=$games[$i]->id?>" />
+                     <input type="hidden" name="game_is_collection" value="<?=$games[$i]->is_collection?>" />
+                     <button class="btn btn-primary" type="submit">Let's Play Wunschliste hinzufügen</button>
+                  </form>
+               </p>
             </p>
             <!--<p>
                wenn bereits lets played...

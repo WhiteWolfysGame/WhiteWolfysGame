@@ -577,13 +577,14 @@ class GameAdministration{
    private $db;
    private $result_limit = 10;
    private $games; // Games-Dataset
-
-
+   private $letsplayList; // Informationen aller aktiven Let's Plays
 
    function __construct(){
       $this->db = Database::getInstance()->getConnection();
       $game = new Game();
       $this->games = $game->GetGamesList();
+      $lp = new YoutubeLetsPlay();
+      $this->letsplayList = $lp->GetLetsPlayList();
    }
 
    function GetGames($page){
@@ -652,6 +653,132 @@ class GameAdministration{
       //$this->debug($numOfGames['collections']);
 
       return $numOfGames;
+   }
+
+   function VoteGame($gameId, $selectedGameInCollection = null){
+      // Existiert das Game schon in der Tabelle "Let's Play"?
+
+      if($this->CheckGameLetsPlayed($gameId)){
+         // kein Vote abgeben!
+         $uri = $this->GetLetsPlayedPlaylist($gameId);
+         return "Ist bereits Let's Played! <a class='external-link' href='$uri' target='_blank'>Hier geht's zur Playlist</a>";
+      }
+      else{
+         $game = $this->GetGameData($gameId);
+         // ist das Game schon in der Wunschliste?
+
+         $sql = "SELECT * FROM YoutubeLetsPlayWishlist WHERE game_id = '$gameId';";
+         $result = mysqli_query($this->db, $sql);
+
+         //Ja:
+         if (mysqli_num_rows($result) > 0){
+            // Add vote + 1; bei Collections alle games in dieser auf +1
+
+            while($row = mysqli_fetch_assoc($result)){
+               $currId = $row["id"];
+               $currVote = $row["votes"];
+               $currVote++;
+
+               $updateSql = "";
+               if(isset($selectedGameInCollection) && $selectedGameInCollection > 0){
+                  $updateSql = "UPDATE YoutubeLetsPlayWishlist SET updated = NOW(), votes = '$currVote' WHERE game_id = '$gameId' AND game_collection_id = '$selectedGameInCollection' AND id = '$currId'";
+               }
+               else{
+                  // Sicherheitshalber überprüfen, ob es sich hier um eine Collection handelt... ggfs. Insert, sonst update
+                  //Überprüfung, ob es mehr Einträge in Collection gibt als DB-LP-Wishlist hinterlegt
+
+                  if($game->is_collection > 0 &&
+                     isset($game->game_collection) &&
+                     mysqli_num_rows($result) < count($game->game_collection))
+                  {
+                     // Erweiterte Infos abrufen:
+                     for($c = 0; $c < count($game->game_collection); $c++){
+                        $sqlSelect = "SELECT * FROM YoutubeLetsPlayWishlist WHERE game_id = '$gameId' AND game_collection_id = '".$game->game_collection[$c]->id."';";
+                        $resultSelect = mysqli_query($this->db, $sqlSelect);
+
+                        if(mysqli_num_rows($resultSelect) == 0){
+                           // fehlende Titel mit hinzufügen
+                           $insertSql = "INSERT INTO YoutubeLetsPlayWishlist (game_id,game_collection_id,votes,created,updated) VALUES ($gameId,".$game->game_collection[$c]->id.",1,NOW(),NOW());";
+                           mysqli_query($this->db, $insertSql);
+                        }
+                     }
+                  }
+                  $updateSql = "UPDATE YoutubeLetsPlayWishlist SET updated = NOW(), votes = '$currVote' WHERE game_id = '$gameId' AND id = '$currId'";
+               }
+               mysqli_query($this->db, $updateSql);
+            }
+
+            return "Dankeschön, deine Stimme wurde abgegeben";
+         }
+         // Nein:
+         else{
+            // ist es eine Collection?
+
+            //Ja:
+            if($game->is_collection > 0 && isset($game->game_collection)){
+               //Füge ausgewählte(s) Game(s) aus der Collection hinzu und setze "votes" auf 1
+
+               for($i = 0; $i < count($game->game_collection); $i++){
+                  
+                  if(isset($selectedGameInCollection) && $selectedGameInCollection > 0){
+                     // bestimmtes Game aus der Collection
+                     $insertSql = "INSERT INTO YoutubeLetsPlayWishlist (game_id,game_collection_id,votes,created,updated) VALUES ($gameId,$selectedGameInCollection,1,NOW(),NOW());";
+                     mysqli_query($this->db, $insertSql);
+                     break; // Abbruch, sonst wird derselbe Titel des Games mehrfach hinzugefügt, was hier nicht korrekt wäre
+                  }
+                  else{
+                     // alle Games aus der Collection
+                     $collId = $game->game_collection[$i]->id;
+                     $insertSql = "INSERT INTO YoutubeLetsPlayWishlist (game_id,game_collection_id,votes,created,updated) VALUES ($gameId,$collId,1,NOW(),NOW());";
+                     mysqli_query($this->db, $insertSql);
+                  }
+               }
+               return "Dankeschön, deine Stimme wurde abgegeben";
+            }
+            //Nein:
+            else{
+               // Füge Füge ausgewähltes Game hinzu und setze "votes" auf 1
+
+               $insertSql = "INSERT INTO YoutubeLetsPlayWishlist (game_id,votes,created,updated) VALUES ($gameId,1,NOW(),NOW());";
+               mysqli_query($this->db, $insertSql);
+
+               return "Dankeschön, deine Stimme wurde abgegeben";
+            }
+         }
+      }
+   }
+
+   function CheckGameLetsPlayed($gameId){
+      foreach($this->letsplayList as $game){
+         if($game->game->id == $gameId){
+            return true;
+            break;
+         }
+      }
+
+      return false;
+   }
+
+   function GetLetsPlayedPlaylist($gameId){
+      foreach($this->letsplayList as $game){
+         if($game->game->id == $gameId){
+            return $game->playlistUrl;
+            break;
+         }
+      }
+
+      return null;
+   }
+
+   function GetGameData($gameId){
+      foreach($this->games as $game){
+         if($game->id == $gameId){
+            return $game;
+            break;
+         }
+      }
+
+      return null;
    }
 
    function GetDiagramOfGamesOnPlattform(){
