@@ -341,6 +341,8 @@ class YoutubeLetsPlay{
    private $letsplayed;
    private $result_limit = 10;
 
+   private $wishlist;
+
    function __construct(){
       $this->db = Database::getInstance()->getConnection();
 
@@ -359,8 +361,8 @@ class YoutubeLetsPlay{
       $collection = new GameCollection();
       $collectionList = $collection->GetCollectionList();
 
-      $sql = "SELECT id, game_id, game_collection_id, playlist_url, lp_started, lp_ended FROM YoutubeLetsPlay ORDER BY lp_started DESC;";
-      $result = mysqli_query($this->db, $sql);
+      $sqlLetsPlay = "SELECT id, game_id, game_collection_id, playlist_url, lp_started, lp_ended FROM YoutubeLetsPlay ORDER BY lp_started DESC;";
+      $result = mysqli_query($this->db, $sqlLetsPlay);
 
       while($letsPlayRow = mysqli_fetch_assoc($result)){
          //$this->debug($letsPlayRow);
@@ -389,6 +391,43 @@ class YoutubeLetsPlay{
          $lpData->ended = $letsPlayRow['lp_ended'];
 
          $this->letsplayed[] = $lpData;
+      }
+
+
+      //$sqlWishlist = "SELECT id, game_id, game_collection_id, votes, created, updated FROM YoutubeLetsPlayWishlist ORDER BY votes DESC, created DESC;";
+      $sqlWishlist = "SELECT wl.id, wl.game_id, wl.game_collection_id, wl.votes, wl.created, wl.updated\n"
+      . "FROM YoutubeLetsPlayWishlist wl\n"
+      . "     INNER JOIN Game g ON wl.game_id = g.id\n"
+      . "     LEFT JOIN GameCollection c ON wl.game_collection_id = c.id\n"
+      . "ORDER BY wl.votes DESC, g.title ASC, c.title ASC";
+      $resultWishlist = mysqli_query($this->db, $sqlWishlist);
+
+      while($wishlistRow = mysqli_fetch_assoc($resultWishlist)){
+         $wishlistData = new WishlistData();
+         $wishlistData->id = $wishlistRow['id'];
+
+         foreach($gamesList as $theGame){
+            if($theGame->id === $wishlistRow['game_id']){
+               $wishlistData->game = $theGame;
+               break;
+            }
+         }
+
+         if($wishlistData->game->is_collection){
+            foreach($collectionList as $theCollection){
+               if($theCollection->id === $wishlistRow['game_collection_id']){
+                  //$this->debug($theCollection);
+                  $wishlistData->collection = $theCollection;
+                  break;
+               }
+            }
+         }
+
+         $wishlistData->votes = $wishlistRow['votes'];
+         $wishlistData->created = $wishlistRow['created'];
+         $wishlistData->updated = $wishlistRow['updated'];
+
+         $this->wishlist[] = $wishlistData;
       }
 
       //$this->debug($this->letsplayed);
@@ -432,6 +471,10 @@ class YoutubeLetsPlay{
       return ceil($pages);
    }
 
+   function GetWishlist(){
+      return $this->wishlist;
+   }
+
    private function debug($data){
       echo "<pre>";
       print_r($data);
@@ -446,6 +489,15 @@ class YoutubeLetsPlayData{
    public $playlistUrl;
    public $started;
    public $ended;
+}
+
+class WishlistData{
+   public $id;
+   public $game;
+   public $collection;
+   public $votes;
+   public $created;
+   public $updated;
 }
 
 class GameCollection{
