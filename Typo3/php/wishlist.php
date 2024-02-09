@@ -4,6 +4,8 @@ require 'game_administration_class.php';
 $lp = new YoutubeLetsPlay();
 $games = $lp->GetWishlist();
 
+$maxToShow = 10;
+
 
 function toGermanDate($mysqlDate){
    $newDate = $mysqlDate;
@@ -19,7 +21,7 @@ function GetPlayedGametitle($g){
 }
 
 for($i = 0; $i < count($games); $i++){
-   if($i < 10){
+   if($i < $maxToShow){
       ?>
       <div class="row d-none d-sm-flex">
       
@@ -52,7 +54,7 @@ for($i = 0; $i < count($games); $i++){
       <?php
    }
    else{
-      if($i==10){
+      if($i==$maxToShow){
          ?>
          <br />
 
