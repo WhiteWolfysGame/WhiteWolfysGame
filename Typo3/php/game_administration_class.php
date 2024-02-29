@@ -639,7 +639,7 @@ class GameAdministration{
       $this->letsplayList = $lp->GetLetsPlayList();
    }
 
-   function GetGames($page){
+   function GetGames($page, $filterPlattform = null, $filterText = null){
 
       $startingIndex = $page * $this->result_limit;
       $gamesToShow;
@@ -647,9 +647,62 @@ class GameAdministration{
       $counter = 0;
 
       for($i = $startingIndex; $i < count($this->games); $i++){
-         $gamesToShow[] = $this->games[$i];
-         $counter++;
-         if($counter >= $this->result_limit) break;
+
+         // Filter nach Text und Plattform
+         if(isset($filterText) && strlen($filterText) > 1 && isset($filterPlattform) && $filterPlattform !== "Plattform..."){
+
+            // Auch Titel in der Collection müssen bewertet werden
+            if($this->games[$i]->is_collection) {
+
+               for($j = 0; $j < count($this->games[$i]->game_collection); $j++){
+                  if(str_contains($this->games[$i]->game_collection[$j]->title, $filterText) &&
+                     $this->games[$i]->plattform->id === $filterPlattform){
+                     $gamesToShow[] = $this->games[$i];
+                     break;
+                  }
+               }
+
+            }
+            else{
+               if(str_contains($this->games[$i]->title, $filterText) &&
+                  $this->games[$i]->plattform->id === $filterPlattform){
+                  $gamesToShow[] = $this->games[$i];
+               }
+            }
+         }
+
+         // Filter nur nach Text
+         else if(isset($filterText) && strlen($filterText) > 1 && isset($filterPlattform) && $filterPlattform === "Plattform..."){
+            
+            // Auch Titel in der Collection müssen bewertet werden
+            if($this->games[$i]->is_collection) {
+
+               for($j = 0; $j < count($this->games[$i]->game_collection); $j++){
+                  if(str_contains($this->games[$i]->game_collection[$j]->title, $filterText)){
+                     $gamesToShow[] = $this->games[$i];
+                     break;
+                  }
+               }
+
+            }
+            else{
+               if(str_contains($this->games[$i]->title, $filterText)){
+                  $gamesToShow[] = $this->games[$i];
+               }
+            }
+         }
+         // Filter nach Plattform
+         else if(!isset($filterText) && isset($filterPlattform) && $filterPlattform !== "Plattform..."){
+            if($this->games[$i]->plattform->id === $filterPlattform){
+               $gamesToShow[] = $this->games[$i];
+            }
+         }
+         // Standard
+         else{
+            $gamesToShow[] = $this->games[$i];
+            $counter++;
+            if($counter >= $this->result_limit) break;
+         }
       }
 
       return $gamesToShow;

@@ -1,6 +1,9 @@
 <?php
 require 'game_administration_class.php';
 
+$pf = new Plattform();
+$plattforms = $pf->GetPlattformList();
+
 $administration = new GameAdministration();
 $currentPage = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
 $games = $administration->GetGames($currentPage);
@@ -36,12 +39,60 @@ if(isset($_POST)){
       <?php
       //echo "Hallo ausgewähltes Spiel";
    }
+
+   // Spielefilterung
+   if(isset($_POST['searchGame']) || isset($_POST['searchPlattform'])){
+      $result = "Die Suche nach ";
+      if(isset($_POST['searchGame']) && strlen($_POST['searchGame']) > 1){
+         $result .= $_POST['searchGame'] . " ";
+      }
+      if(isset($_POST['searchGame']) && strlen($_POST['searchGame']) > 1 && isset($_POST['searchPlattform'])){
+         $result .= "und ";
+      }
+      if(isset($_POST['searchPlattform']) && isset($_POST['searchPlattform']) !== "Plattform..."){
+         foreach($plattforms as $plattform){
+            if($plattform->id == $_POST['searchPlattform']){
+               $result .= $plattform->description . " ";
+               break;
+            }
+         }
+      }
+      $result .= "ergab folgende Treffer"
+      ?>
+      <div class="bs-callout bs-callout-info">
+         <?=$result?>
+      </div>
+      <?php
+
+      $games = $administration->GetGames($currentPage, $_POST['searchPlattform'], $_POST['searchGame']);
+   }
 }
 ?>
 
+<form id="form-game-search" method="post" action="">
+   <div class="input-group mb-3">
+      <span class="input-group-text">Filtern nach</span>
+      <input type="text" class="form-control" placeholder="Game" aria-label="Game" aria-describedby="basic-addon" name="searchGame">
+      <select class="form-select" id="inputGroupSelectPlattform" name="searchPlattform">
+         <option selected>Plattform...</option>
+         <?php
+         for($i = 0; $i < count($plattforms); $i++){
+            ?>
+            <option value="<?=$plattforms[$i]->id?>"><?=$plattforms[$i]->description?></option>
+            <?php
+         }
+         ?>
+      </select>
+      <button class="btn btn-outline-secondary" type="submit">Suchen</button>
+   </div>
+</form>
+
 <div class="accordion">
 <?php
-for($i = 0; $i < count($games); $i++){
+$numOfItems = 0;
+if(isset($games) && is_array($games)) { $numOfItems = count($games); }
+
+for($i = 0; $i < $numOfItems; $i++){
    ?>
    <div class="accordion-item">
       <h2 id="heading-<?=$i?>" class="accordion-header">
@@ -143,143 +194,157 @@ for($i = 0; $i < count($games); $i++){
 ?>
 </div>
 <br />
-<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Pagination Buttongroup">
-   <div class="btn-group me-2 btn-group-sm" role="group" aria-label="To First and/or Preview">
-      <?php
-      if($currentPage == 0){
-         ?>
-         <a href="?page=<?=$currentPage?>" class="btn btn-primary">Start</a>
+
+<!--
+Pagination
+-->
+<?php
+if(isset($_POST) && (isset($_POST['searchGame']) || isset($_POST['searchPlattform']))){
+   ?>
+   <a href="/spieleliste" class="btn btn-secondary" role="button" >Reset</a>
+   <?php
+}
+else
+{
+   ?>
+   <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Pagination Buttongroup">
+      <div class="btn-group me-2 btn-group-sm" role="group" aria-label="To First and/or Preview">
          <?php
-      }
-      else {
+         if($currentPage == 0){
+            ?>
+            <a href="?page=<?=$currentPage?>" class="btn btn-primary">Start</a>
+            <?php
+         }
+         else {
+            ?>
+            <a href="?page=0" class="btn btn-outline-primary">Start</a>
+            <a href="?page=<?=$currentPage-1?>" class="btn btn-outline-primary">&lt;&lt;</a>
+            <?php
+         }
          ?>
-         <a href="?page=0" class="btn btn-outline-primary">Start</a>
-         <a href="?page=<?=$currentPage-1?>" class="btn btn-outline-primary">&lt;&lt;</a>
+      </div>
+
+      <div class="btn-group me-2 btn-group-sm" role="group" aria-label="The Pages">
          <?php
-      }
-      ?>
-   </div>
+            $pages = $administration->GetNumPages();
+            $maxVisibleLinks = 1;
+            $modMaxVisibleLinks = ceil($maxVisibleLinks / 2); // für definition der Pages bei aktuellem Link (links und rechts v. aktuellem page)
+            $lastPageLinkId = $pages - $maxVisibleLinks;
 
-   <div class="btn-group me-2 btn-group-sm" role="group" aria-label="The Pages">
-      <?php
-         $pages = $administration->GetNumPages();
-         $maxVisibleLinks = 1;
-         $modMaxVisibleLinks = ceil($maxVisibleLinks / 2); // für definition der Pages bei aktuellem Link (links und rechts v. aktuellem page)
-         $lastPageLinkId = $pages - $maxVisibleLinks;
+            $skippedPrevFromCurrent = 0;
+            $skippedNextFromCurrent = 0;
+            $done = false;
+            
+            for($i = 0; $i < $pages; $i++){
 
-         $skippedPrevFromCurrent = 0;
-         $skippedNextFromCurrent = 0;
-         $done = false;
-         
-         for($i = 0; $i < $pages; $i++){
+               if($i < $currentPage){
+                  // erste Pages anzeigen
+                  if($i < $maxVisibleLinks){
+                     ?>
+                     <a href="?page=<?=$i?>" class="btn btn-outline-primary"><?=($i+1)?></a>
+                     <?php
+                  }
+                  else{
+                     $skippedPrevFromCurrent++;
+                  }
 
-            if($i < $currentPage){
-               // erste Pages anzeigen
-               if($i < $maxVisibleLinks){
-                  ?>
-                  <a href="?page=<?=$i?>" class="btn btn-outline-primary"><?=($i+1)?></a>
-                  <?php
-               }
-               else{
-                  $skippedPrevFromCurrent++;
+                  continue;
                }
 
-               continue;
-            }
-
-            // aktuelle seite erreicht... jetzt die geskippten als Dropdown integrieren
-            if($i == $currentPage){
-               // geskippte Pages als Dropdown hinzufügen
-               if($skippedPrevFromCurrent > 1){
-                  ?>
-                  <div class="btn-group">
-                     <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">...</button>
-                     <ul class="dropdown-menu">
-                        <?php
-                        // geskippte als Dropdown
-                        for($iSkippedBefore = $skippedPrevFromCurrent-$modMaxVisibleLinks; $iSkippedBefore > 0; $iSkippedBefore--){
-                           ?>
-                           <li><a class="dropdown-item" href="?page=<?=$i-$iSkippedBefore-1?>"><?=($i-$iSkippedBefore)?></a></li>
-                           <?php
-                        }
-                        ?>
-                     </ul>
-                  </div>
-                  <?php
-               }
-
-               // jetzt noch die AKTUELLE Page anzeigen
-               if($i > $maxVisibleLinks){
-                  ?>
-                  <a href="?page=<?=$i-1?>" class="btn btn-outline-primary"><?=($i+1-1)?></a>
-                  <?php
-               }
-               ?>
-               <a href="?page=<?=$i?>" class="btn btn-primary"><?=($i+1)?></a>
-               <?php
-               if($i < $lastPageLinkId-1){
-                  ?>
-                  <a href="?page=<?=$i+1?>" class="btn btn-outline-primary"><?=($i+1+1)?></a>
-                  <?php
-               }
-            }
-
-            if($i > $currentPage){
-
-               if($i >= $lastPageLinkId){
-                  // vor dem Abschluss noch die geskippten Pages als Dropdown integrieren
-                  if($skippedNextFromCurrent > 1 && !$done){
+               // aktuelle seite erreicht... jetzt die geskippten als Dropdown integrieren
+               if($i == $currentPage){
+                  // geskippte Pages als Dropdown hinzufügen
+                  if($skippedPrevFromCurrent > 1){
                      ?>
                      <div class="btn-group">
                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">...</button>
                         <ul class="dropdown-menu">
                            <?php
                            // geskippte als Dropdown
-                           for($iSkippedNext = $skippedNextFromCurrent-$modMaxVisibleLinks-1; $iSkippedNext >= 0; $iSkippedNext--){
+                           for($iSkippedBefore = $skippedPrevFromCurrent-$modMaxVisibleLinks; $iSkippedBefore > 0; $iSkippedBefore--){
                               ?>
-                              <li><a class="dropdown-item" href="?page=<?=$i-$iSkippedNext-1?>"><?=($i-$iSkippedNext)?></a></li>
+                              <li><a class="dropdown-item" href="?page=<?=$i-$iSkippedBefore-1?>"><?=($i-$iSkippedBefore)?></a></li>
                               <?php
                            }
-                           $done = true;
                            ?>
                         </ul>
                      </div>
                      <?php
                   }
 
-                  // letzte mögliche Pages anzeigen
+                  // jetzt noch die AKTUELLE Page anzeigen
+                  if($i > $maxVisibleLinks){
+                     ?>
+                     <a href="?page=<?=$i-1?>" class="btn btn-outline-primary"><?=($i+1-1)?></a>
+                     <?php
+                  }
                   ?>
-                  <a href="?page=<?=$i?>" class="btn btn-outline-primary"><?=($i+1)?></a>
+                  <a href="?page=<?=$i?>" class="btn btn-primary"><?=($i+1)?></a>
                   <?php
-               }
-               else{
-                  $skippedNextFromCurrent++;
+                  if($i < $lastPageLinkId-1){
+                     ?>
+                     <a href="?page=<?=$i+1?>" class="btn btn-outline-primary"><?=($i+1+1)?></a>
+                     <?php
+                  }
                }
 
-               continue;
+               if($i > $currentPage){
+
+                  if($i >= $lastPageLinkId){
+                     // vor dem Abschluss noch die geskippten Pages als Dropdown integrieren
+                     if($skippedNextFromCurrent > 1 && !$done){
+                        ?>
+                        <div class="btn-group">
+                           <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">...</button>
+                           <ul class="dropdown-menu">
+                              <?php
+                              // geskippte als Dropdown
+                              for($iSkippedNext = $skippedNextFromCurrent-$modMaxVisibleLinks-1; $iSkippedNext >= 0; $iSkippedNext--){
+                                 ?>
+                                 <li><a class="dropdown-item" href="?page=<?=$i-$iSkippedNext-1?>"><?=($i-$iSkippedNext)?></a></li>
+                                 <?php
+                              }
+                              $done = true;
+                              ?>
+                           </ul>
+                        </div>
+                        <?php
+                     }
+
+                     // letzte mögliche Pages anzeigen
+                     ?>
+                     <a href="?page=<?=$i?>" class="btn btn-outline-primary"><?=($i+1)?></a>
+                     <?php
+                  }
+                  else{
+                     $skippedNextFromCurrent++;
+                  }
+
+                  continue;
+               }
             }
-         }
-      ?>
-   </div>
+         ?>
+      </div>
 
-   <div class="btn-group me-2 btn-group-sm" role="group" aria-label="To Last and/or Next">
-      <?php
-      if($currentPage == ($pages-1)){
-         ?>
-         <a href="?page=<?=($pages-1)?>" class="btn btn-primary">Letzte</a>
+      <div class="btn-group me-2 btn-group-sm" role="group" aria-label="To Last and/or Next">
          <?php
-      }
-      else{
+         if($currentPage == ($pages-1)){
+            ?>
+            <a href="?page=<?=($pages-1)?>" class="btn btn-primary">Letzte</a>
+            <?php
+         }
+         else{
+            ?>
+            <a href="?page=<?=($currentPage+1)?>" class="btn btn-outline-primary">&gt;&gt;</a>
+            <a href="?page=<?=($pages-1)?>" class="btn btn-outline-primary">Letzte</a>
+            <?php
+         }
          ?>
-         <a href="?page=<?=($currentPage+1)?>" class="btn btn-outline-primary">&gt;&gt;</a>
-         <a href="?page=<?=($pages-1)?>" class="btn btn-outline-primary">Letzte</a>
-         <?php
-      }
-      ?>
+      </div>
    </div>
-</div>
-<br/>
-<?php
+   <br/>
+   <?php
+}
 /*
 echo "<br><br>administration-object:<br>";
 echo "<pre>";
