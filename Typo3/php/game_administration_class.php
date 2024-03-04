@@ -435,6 +435,9 @@ class YoutubeLetsPlay{
 
    function GetLetsPlayed($page){
 
+      if(!is_numeric($page))
+         $page = 0;
+
       $startingIndex = $page * $this->result_limit;
       $gamesToShow;
 
@@ -640,6 +643,9 @@ class GameAdministration{
    }
 
    function GetGames($page, $filterPlattform = null, $filterText = null){
+
+      if(!is_numeric($page))
+         $page = 0;
 
       $startingIndex = $page * $this->result_limit;
       $gamesToShow;

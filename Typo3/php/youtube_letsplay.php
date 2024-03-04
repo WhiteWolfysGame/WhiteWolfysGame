@@ -2,7 +2,7 @@
 require 'game_administration_class.php';
 
 //$administration = new GameAdministration();
-$currentPage = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
+$currentPage = (isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
 //$games = $administration->GetGames($currentPage);
 
 $lp = new YoutubeLetsPlay();

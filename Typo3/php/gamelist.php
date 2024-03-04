@@ -5,7 +5,7 @@ $pf = new Plattform();
 $plattforms = $pf->GetPlattformList();
 
 $administration = new GameAdministration();
-$currentPage = (isset($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
+$currentPage = (isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0) ? $_GET['page'] : 0;
 $games = $administration->GetGames($currentPage);
 
 function toGermanDate($mysqlDate){
